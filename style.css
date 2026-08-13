@@ -1157,8 +1157,6 @@ span{
    cards, navigation, forms, timeline, project grid and ROI section.
    ===================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
-
 :root {
     --bg-color: #07070a;
     --second-bg-color: #0d0d12;
@@ -2704,5 +2702,1036 @@ section {
     .service-box,
     .skill-item {
         -webkit-tap-highlight-color: transparent;
+    }
+}
+
+
+/* =====================================================================
+   SEO / ACCESSIBILITY SUPPORT
+   Keeps the visual design unchanged while improving readable context.
+   ===================================================================== */
+
+.contact-intro {
+    width: min(820px, 100%);
+    margin: -3rem auto 3rem;
+    color: var(--muted-color, #a9a9b6);
+    font-size: 1.55rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+    .contact-intro {
+        margin-top: -2rem;
+        margin-bottom: 2.5rem;
+        font-size: 1.42rem;
+        text-align: left;
+    }
+}
+
+
+/* =====================================================================
+   APPLE LIQUID GLASS — WEB-INSPIRED DESIGN LAYER
+   ---------------------------------------------------------------------
+   Inspired by Apple's Liquid Glass principles:
+   - floating functional layers
+   - transparency + adaptive tint
+   - rounded concentric geometry
+   - subtle lensing/specular highlights
+   - strong legibility and hierarchy
+   - restrained use on navigation and controls
+
+   Existing HTML structure/class names remain unchanged.
+   ===================================================================== */
+
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.075);
+    --glass-bg-strong: rgba(255, 255, 255, 0.105);
+    --glass-bg-soft: rgba(255, 255, 255, 0.045);
+    --glass-border: rgba(255, 255, 255, 0.16);
+    --glass-border-soft: rgba(255, 255, 255, 0.09);
+    --glass-highlight: rgba(255, 255, 255, 0.42);
+    --glass-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+    --glass-shadow-deep: 0 28px 80px rgba(0, 0, 0, 0.34);
+    --glass-blur: 28px;
+    --glass-saturate: 155%;
+    --liquid-violet: #b86cff;
+    --liquid-blue: #65a8ff;
+    --liquid-cyan: #67e8f9;
+    --liquid-pink: #ff8fd8;
+    --liquid-white: rgba(255,255,255,0.92);
+}
+
+/* Use Apple's system typeface on Apple devices, with safe fallbacks elsewhere */
+* {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+}
+
+body {
+    position: relative;
+    isolation: isolate;
+    background:
+        radial-gradient(circle at 12% 6%, rgba(184,108,255,0.23), transparent 28%),
+        radial-gradient(circle at 86% 12%, rgba(101,168,255,0.18), transparent 28%),
+        radial-gradient(circle at 74% 82%, rgba(103,232,249,0.11), transparent 30%),
+        radial-gradient(circle at 15% 88%, rgba(255,143,216,0.09), transparent 28%),
+        linear-gradient(180deg, #08090d 0%, #0a0b10 45%, #08090d 100%);
+    background-attachment: fixed;
+}
+
+/* Ambient color fields beneath the interface give the glass something to react to */
+body::before {
+    content: "";
+    position: fixed;
+    inset: -18%;
+    z-index: -2;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 20% 28%, rgba(184,108,255,0.15), transparent 21%),
+        radial-gradient(circle at 72% 20%, rgba(101,168,255,0.13), transparent 22%),
+        radial-gradient(circle at 72% 74%, rgba(103,232,249,0.09), transparent 23%),
+        radial-gradient(circle at 35% 80%, rgba(255,143,216,0.07), transparent 19%);
+    filter: blur(18px) saturate(135%);
+    animation: liquidAmbientDrift 18s ease-in-out infinite alternate;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        linear-gradient(115deg, rgba(255,255,255,0.018), transparent 30%, rgba(255,255,255,0.01)),
+        radial-gradient(circle at center, transparent 42%, rgba(0,0,0,0.16) 100%);
+}
+
+@keyframes liquidAmbientDrift {
+    0% {
+        transform: translate3d(-1.5%, -1%, 0) scale(1);
+    }
+    50% {
+        transform: translate3d(1.5%, 1%, 0) scale(1.025);
+    }
+    100% {
+        transform: translate3d(-0.5%, 1.5%, 0) scale(1.015);
+    }
+}
+
+/* ---------------------------------------------------------------------
+   LIQUID GLASS FUNCTIONAL LAYER — HEADER / NAVIGATION
+   --------------------------------------------------------------------- */
+
+header,
+.header {
+    position: fixed;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.115), rgba(255,255,255,0.045)),
+        rgba(14, 15, 21, 0.56);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    box-shadow:
+        0 18px 55px rgba(0,0,0,0.28),
+        inset 0 1px 0 rgba(255,255,255,0.20),
+        inset 0 -1px 0 rgba(255,255,255,0.035);
+}
+
+header::before,
+.header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    background:
+        linear-gradient(
+            110deg,
+            rgba(255,255,255,0.20) 0%,
+            rgba(255,255,255,0.04) 25%,
+            transparent 48%,
+            rgba(101,168,255,0.055) 68%,
+            rgba(184,108,255,0.08) 100%
+        );
+    opacity: 0.72;
+}
+
+header::after,
+.header::after {
+    content: "";
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    top: 0;
+    height: 1px;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+}
+
+.logo,
+.navbar,
+#menu-icon {
+    position: relative;
+    z-index: 1;
+}
+
+.logo span {
+    background: linear-gradient(135deg, #d7b2ff, #8bbfff 55%, #81efff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Individual navigation items behave like floating glass controls */
+.navbar a {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
+    background: transparent;
+    color: rgba(255,255,255,0.72);
+    transition:
+        transform 220ms cubic-bezier(.2,.8,.2,1),
+        background 220ms ease,
+        border-color 220ms ease,
+        box-shadow 220ms ease,
+        color 220ms ease;
+}
+
+.navbar a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    background:
+        radial-gradient(circle at 22% 0%, rgba(255,255,255,0.28), transparent 42%),
+        linear-gradient(135deg, rgba(255,255,255,0.09), rgba(255,255,255,0.025));
+    transition: opacity 220ms ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    border-color: rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.075);
+    color: #fff;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.18),
+        0 10px 28px rgba(0,0,0,0.16);
+    transform: translateY(-1px);
+}
+
+.navbar a:hover::before,
+.navbar a.active::before {
+    opacity: 1;
+}
+
+/* ---------------------------------------------------------------------
+   CONTENT SURFACES — STANDARD MATERIALS
+   Glass is reserved for controls; content surfaces stay calmer.
+   --------------------------------------------------------------------- */
+
+.timeline-content,
+.service-box,
+.skill-item,
+.card,
+.performance-stat,
+.chart-card,
+.contact form,
+.performance-summary {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--glass-border-soft);
+    background:
+        linear-gradient(145deg, rgba(255,255,255,0.052), rgba(255,255,255,0.022)),
+        rgba(13, 14, 19, 0.72);
+    box-shadow:
+        0 18px 44px rgba(0,0,0,0.20),
+        inset 0 1px 0 rgba(255,255,255,0.055);
+}
+
+.timeline-content::before,
+.service-box::before,
+.skill-item::before,
+.card::before,
+.performance-stat::before,
+.chart-card::before,
+.contact form::before,
+.performance-summary::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            120deg,
+            rgba(255,255,255,0.07) 0%,
+            transparent 28%,
+            transparent 72%,
+            rgba(101,168,255,0.028) 100%
+        );
+}
+
+.timeline-content > *,
+.service-box > *,
+.skill-item > *,
+.card > *,
+.performance-stat > *,
+.chart-card > *,
+.contact form > *,
+.performance-summary > * {
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-content:hover,
+.service-box:hover,
+.skill-item:hover,
+.card:hover,
+.performance-stat:hover {
+    border-color: rgba(255,255,255,0.17);
+    background:
+        linear-gradient(145deg, rgba(255,255,255,0.075), rgba(255,255,255,0.028)),
+        rgba(16, 17, 23, 0.76);
+    box-shadow:
+        0 24px 58px rgba(0,0,0,0.28),
+        inset 0 1px 0 rgba(255,255,255,0.11);
+}
+
+/* ---------------------------------------------------------------------
+   LIQUID GLASS CONTROLS — BUTTONS / SOCIAL / BADGES
+   --------------------------------------------------------------------- */
+
+.btn,
+.social-icons a,
+.footer .social a,
+.chart-badge {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    border: 1px solid rgba(255,255,255,0.20);
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.055)),
+        rgba(184,108,255,0.11);
+    color: #fff;
+    -webkit-backdrop-filter: blur(18px) saturate(155%);
+    backdrop-filter: blur(18px) saturate(155%);
+    box-shadow:
+        0 12px 32px rgba(0,0,0,0.20),
+        inset 0 1px 0 rgba(255,255,255,0.28),
+        inset 0 -1px 0 rgba(255,255,255,0.045);
+    transition:
+        transform 220ms cubic-bezier(.2,.8,.2,1),
+        box-shadow 220ms ease,
+        background 220ms ease,
+        border-color 220ms ease;
+}
+
+.btn::before,
+.social-icons a::before,
+.footer .social a::before,
+.chart-badge::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 25% 8%, rgba(255,255,255,0.38), transparent 34%),
+        linear-gradient(110deg, transparent 48%, rgba(101,168,255,0.10) 70%, rgba(184,108,255,0.12));
+    opacity: 0.78;
+}
+
+.btn::after,
+.social-icons a::after,
+.footer .social a::after,
+.chart-badge::after {
+    content: "";
+    position: absolute;
+    left: 16%;
+    right: 16%;
+    top: 1px;
+    height: 1px;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.68), transparent);
+}
+
+.btn:hover,
+.social-icons a:hover,
+.footer .social a:hover,
+.chart-badge:hover {
+    transform: translateY(-2px) scale(1.015);
+    border-color: rgba(255,255,255,0.30);
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.20), rgba(255,255,255,0.07)),
+        rgba(143, 97, 255, 0.16);
+    box-shadow:
+        0 18px 44px rgba(0,0,0,0.26),
+        0 0 24px rgba(101,168,255,0.055),
+        inset 0 1px 0 rgba(255,255,255,0.36);
+}
+
+/* Primary CTA gets a restrained tint instead of a flat purple fill */
+.btn {
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.16), rgba(255,255,255,0.055)),
+        linear-gradient(135deg, rgba(184,108,255,0.28), rgba(101,168,255,0.16));
+}
+
+.btn-group a:nth-of-type(2) {
+    border: 1px solid rgba(255,255,255,0.17);
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.09), rgba(255,255,255,0.03)),
+        rgba(12,13,18,0.42);
+    color: rgba(255,255,255,0.92);
+    -webkit-backdrop-filter: blur(18px) saturate(145%);
+    backdrop-filter: blur(18px) saturate(145%);
+}
+
+/* ---------------------------------------------------------------------
+   HERO — DEPTH + REFRACTIVE FRAME
+   --------------------------------------------------------------------- */
+
+.home-img {
+    isolation: isolate;
+}
+
+.home-img::before {
+    inset: -7%;
+    border-radius: 40px;
+    background:
+        radial-gradient(circle at 22% 12%, rgba(255,255,255,0.16), transparent 28%),
+        radial-gradient(circle at 72% 24%, rgba(101,168,255,0.18), transparent 34%),
+        radial-gradient(circle at 40% 78%, rgba(184,108,255,0.18), transparent 35%);
+    filter: blur(24px);
+    opacity: 0.88;
+}
+
+.home-img img {
+    border: 1px solid rgba(255,255,255,0.20);
+    box-shadow:
+        0 34px 90px rgba(0,0,0,0.40),
+        0 0 0 1px rgba(255,255,255,0.025),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.home-content h1 span,
+.heading span {
+    background:
+        linear-gradient(120deg, #f1dfff 4%, #bd8cff 38%, #88bfff 68%, #8ef3ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.text-animation span::before {
+    background: linear-gradient(120deg, #cfa5ff, #8bbfff 60%, #8df1ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ---------------------------------------------------------------------
+   PERFORMANCE / ROI
+   --------------------------------------------------------------------- */
+
+.performance {
+    background:
+        radial-gradient(circle at 12% 14%, rgba(184,108,255,0.13), transparent 28%),
+        radial-gradient(circle at 86% 78%, rgba(101,168,255,0.08), transparent 28%),
+        transparent;
+}
+
+.performance-stat strong {
+    background: linear-gradient(120deg, #fff, #d9c2ff 42%, #9ec8ff 76%, #a7f4ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.chart-card {
+    background:
+        linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.026)),
+        rgba(11,12,17,0.76);
+}
+
+.chart-badge {
+    border-radius: 999px;
+}
+
+/* ---------------------------------------------------------------------
+   FORM CONTROLS
+   --------------------------------------------------------------------- */
+
+.contact form .input-box input,
+.contact form textarea {
+    border: 1px solid rgba(255,255,255,0.11);
+    background:
+        linear-gradient(145deg, rgba(255,255,255,0.052), rgba(255,255,255,0.022)),
+        rgba(8,9,13,0.52);
+    color: rgba(255,255,255,0.96);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    backdrop-filter: blur(12px) saturate(140%);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.06),
+        0 6px 18px rgba(0,0,0,0.10);
+}
+
+.contact form .input-box input:focus,
+.contact form textarea:focus {
+    border-color: rgba(160,190,255,0.34);
+    background:
+        linear-gradient(145deg, rgba(255,255,255,0.072), rgba(255,255,255,0.03)),
+        rgba(11,12,17,0.60);
+    box-shadow:
+        0 0 0 4px rgba(120,165,255,0.07),
+        inset 0 1px 0 rgba(255,255,255,0.11);
+}
+
+/* ---------------------------------------------------------------------
+   MOBILE LIQUID GLASS
+   --------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+    header,
+    .header {
+        background:
+            linear-gradient(135deg, rgba(255,255,255,0.13), rgba(255,255,255,0.055)),
+            rgba(12,13,18,0.68);
+        -webkit-backdrop-filter: blur(24px) saturate(150%);
+        backdrop-filter: blur(24px) saturate(150%);
+    }
+
+    .navbar {
+        overflow: hidden auto;
+        border: 1px solid rgba(255,255,255,0.16);
+        background:
+            linear-gradient(145deg, rgba(255,255,255,0.115), rgba(255,255,255,0.045)),
+            rgba(10,11,15,0.84);
+        -webkit-backdrop-filter: blur(28px) saturate(150%);
+        backdrop-filter: blur(28px) saturate(150%);
+        box-shadow:
+            0 26px 70px rgba(0,0,0,0.40),
+            inset 0 1px 0 rgba(255,255,255,0.15);
+    }
+
+    .navbar a {
+        border: 1px solid rgba(255,255,255,0.06);
+        background: rgba(255,255,255,0.025);
+    }
+
+    .navbar a.active {
+        background: rgba(255,255,255,0.095);
+        border-color: rgba(255,255,255,0.13);
+    }
+
+    .chart-card,
+    .performance-stat,
+    .contact form {
+        box-shadow:
+            0 18px 46px rgba(0,0,0,0.24),
+            inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+}
+
+/* Fallbacks for browsers without backdrop-filter */
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+    header,
+    .header,
+    .navbar,
+    .btn,
+    .social-icons a,
+    .footer .social a,
+    .chart-badge {
+        background: rgba(24,25,32,0.96);
+    }
+}
+
+/* Accessibility: stronger boundaries when higher contrast is requested */
+@media (prefers-contrast: more) {
+    header,
+    .header,
+    .navbar,
+    .btn,
+    .social-icons a,
+    .footer .social a,
+    .chart-badge,
+    .timeline-content,
+    .service-box,
+    .skill-item,
+    .card,
+    .performance-stat,
+    .chart-card,
+    .contact form {
+        border-color: rgba(255,255,255,0.34);
+    }
+
+    .home-content p,
+    .performance-heading p,
+    .contact-intro,
+    .timeline-content p,
+    .service-info p {
+        color: rgba(255,255,255,0.82);
+    }
+}
+
+/* Accessibility: don't rely on ambient movement when reduced motion is enabled */
+@media (prefers-reduced-motion: reduce) {
+    body::before {
+        animation: none !important;
+    }
+}
+
+
+/* =====================================================================
+   FINAL LIQUID GLASS REFINEMENT
+   - Restores the original black + #B026FF visual identity
+   - Fixes typewriter "black wipe" during reverse animation
+   - Increases contrast and brightness without losing glass depth
+   ===================================================================== */
+
+:root {
+    --bg-color: #080808;
+    --second-bg-color: #131313;
+    --text-color: #ffffff;
+    --main-color: #B026FF;
+
+    --glass-bg: rgba(176, 38, 255, 0.075);
+    --glass-bg-strong: rgba(176, 38, 255, 0.12);
+    --glass-bg-soft: rgba(255, 255, 255, 0.035);
+    --glass-border: rgba(176, 38, 255, 0.30);
+    --glass-border-soft: rgba(176, 38, 255, 0.16);
+    --glass-highlight: rgba(255, 255, 255, 0.36);
+}
+
+/* Return to the original deep-black/purple identity */
+body {
+    background:
+        radial-gradient(circle at 12% 10%, rgba(176, 38, 255, 0.18), transparent 28%),
+        radial-gradient(circle at 88% 28%, rgba(176, 38, 255, 0.10), transparent 30%),
+        radial-gradient(circle at 55% 92%, rgba(176, 38, 255, 0.07), transparent 28%),
+        linear-gradient(180deg, #080808 0%, #0b090d 48%, #080808 100%);
+    color: #ffffff;
+}
+
+/* Remove the blue/cyan ambient wash that was making the theme feel muted */
+body::before {
+    background:
+        radial-gradient(circle at 20% 28%, rgba(176, 38, 255, 0.16), transparent 22%),
+        radial-gradient(circle at 78% 20%, rgba(176, 38, 255, 0.10), transparent 24%),
+        radial-gradient(circle at 72% 78%, rgba(176, 38, 255, 0.07), transparent 24%);
+    filter: blur(20px) saturate(120%);
+}
+
+body::after {
+    background:
+        linear-gradient(115deg, rgba(255,255,255,0.012), transparent 30%, rgba(176,38,255,0.012)),
+        radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.20) 100%);
+}
+
+/* Original purple accent everywhere important */
+span,
+.logo span {
+    color: var(--main-color);
+}
+
+.logo span,
+.home-content h1 span,
+.heading span,
+.text-animation span::before {
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: var(--main-color);
+    -webkit-text-fill-color: var(--main-color);
+}
+
+/* Header stays glassy but strongly tied to #B026FF */
+header,
+.header {
+    border-color: rgba(176, 38, 255, 0.25);
+    background:
+        linear-gradient(135deg, rgba(176, 38, 255, 0.10), rgba(255,255,255,0.035)),
+        rgba(8, 8, 8, 0.72);
+    box-shadow:
+        0 16px 48px rgba(0,0,0,0.34),
+        0 0 34px rgba(176,38,255,0.055),
+        inset 0 1px 0 rgba(255,255,255,0.15);
+}
+
+header::before,
+.header::before {
+    background:
+        linear-gradient(
+            110deg,
+            rgba(255,255,255,0.14) 0%,
+            rgba(176,38,255,0.06) 28%,
+            transparent 52%,
+            rgba(176,38,255,0.08) 100%
+        );
+}
+
+.navbar a:hover,
+.navbar a.active {
+    border-color: rgba(176,38,255,0.30);
+    background: rgba(176,38,255,0.12);
+    color: #ffffff;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.12),
+        0 10px 28px rgba(176,38,255,0.08);
+}
+
+/* Brighter text hierarchy */
+.home-content p,
+.performance-heading p,
+.contact-intro,
+.timeline-content p,
+.service-info p,
+.performance-summary p {
+    color: rgba(255,255,255,0.74);
+}
+
+.timeline-date,
+.performance-stat .stat-label,
+.performance-stat small,
+.chart-note,
+.chart-legend-copy,
+.chart-legend-copy span {
+    color: rgba(255,255,255,0.62);
+}
+
+/* Cards: darker, clearer, less grey */
+.timeline-content,
+.service-box,
+.skill-item,
+.card,
+.performance-stat,
+.chart-card,
+.contact form,
+.performance-summary {
+    border-color: rgba(176,38,255,0.16);
+    background:
+        linear-gradient(145deg, rgba(176,38,255,0.065), rgba(255,255,255,0.022)),
+        rgba(8,8,8,0.78);
+    box-shadow:
+        0 18px 44px rgba(0,0,0,0.28),
+        inset 0 1px 0 rgba(255,255,255,0.045);
+}
+
+.timeline-content:hover,
+.service-box:hover,
+.skill-item:hover,
+.card:hover,
+.performance-stat:hover {
+    border-color: rgba(176,38,255,0.38);
+    background:
+        linear-gradient(145deg, rgba(176,38,255,0.10), rgba(255,255,255,0.028)),
+        rgba(8,8,8,0.84);
+    box-shadow:
+        0 24px 56px rgba(0,0,0,0.34),
+        0 0 28px rgba(176,38,255,0.055),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+/* Purple glass controls with more punch */
+.btn,
+.social-icons a,
+.footer .social a,
+.chart-badge {
+    border-color: rgba(176,38,255,0.34);
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.10), rgba(176,38,255,0.08)),
+        rgba(176,38,255,0.16);
+    color: #ffffff;
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.24),
+        0 0 18px rgba(176,38,255,0.06),
+        inset 0 1px 0 rgba(255,255,255,0.20);
+}
+
+.btn::before,
+.social-icons a::before,
+.footer .social a::before,
+.chart-badge::before {
+    background:
+        radial-gradient(circle at 25% 8%, rgba(255,255,255,0.26), transparent 35%),
+        linear-gradient(110deg, transparent 48%, rgba(176,38,255,0.12) 80%);
+}
+
+.btn:hover,
+.social-icons a:hover,
+.footer .social a:hover,
+.chart-badge:hover {
+    border-color: rgba(176,38,255,0.55);
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.13), rgba(176,38,255,0.12)),
+        rgba(176,38,255,0.22);
+    box-shadow:
+        0 18px 42px rgba(0,0,0,0.28),
+        0 0 26px rgba(176,38,255,0.12),
+        inset 0 1px 0 rgba(255,255,255,0.25);
+}
+
+/* Make primary CTA feel like the original theme */
+.btn {
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.035)),
+        linear-gradient(135deg, rgba(176,38,255,0.68), rgba(126,28,190,0.54));
+}
+
+.btn-group a:nth-of-type(2) {
+    border-color: rgba(176,38,255,0.30);
+    background:
+        linear-gradient(135deg, rgba(176,38,255,0.07), rgba(255,255,255,0.018)),
+        rgba(8,8,8,0.68);
+    color: #ffffff;
+}
+
+/* =====================================================================
+   TYPEWRITER FIX
+   The old animation used a solid background overlay to "erase" letters.
+   On a gradient/glass page that became a visible black block.
+   This version reveals/hides the generated text using clip-path instead,
+   so no black/solid wipe is ever drawn over the background.
+   ===================================================================== */
+
+.text-animation span {
+    position: relative;
+    display: inline-block;
+    min-width: 0;
+    padding-right: 0.45rem;
+    vertical-align: bottom;
+}
+
+.text-animation span::before {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    color: var(--main-color);
+    -webkit-text-fill-color: var(--main-color);
+    animation:
+        words 20s infinite,
+        liquidTypewriterReveal 4s steps(18, end) infinite;
+    clip-path: inset(0 0 0 0);
+}
+
+/* The caret no longer acts as a full-width masking block */
+.text-animation span::after {
+    content: "";
+    position: absolute;
+    top: 12%;
+    right: -0.1rem;
+    width: 2px;
+    height: 76%;
+    background: var(--main-color);
+    border: 0;
+    box-shadow: 0 0 10px rgba(176,38,255,0.55);
+    animation: liquidCaretBlink 0.75s steps(1, end) infinite;
+}
+
+/* Reveal -> hold -> erase, entirely transparent */
+@keyframes liquidTypewriterReveal {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+    14% {
+        clip-path: inset(0 100% 0 0);
+    }
+    38% {
+        clip-path: inset(0 0 0 0);
+    }
+    68% {
+        clip-path: inset(0 0 0 0);
+    }
+    92% {
+        clip-path: inset(0 100% 0 0);
+    }
+    100% {
+        clip-path: inset(0 100% 0 0);
+    }
+}
+
+@keyframes liquidCaretBlink {
+    0%, 45% {
+        opacity: 1;
+    }
+    46%, 100% {
+        opacity: 0;
+    }
+}
+
+/* Disable the old width-mask typing animation if it still exists earlier */
+.text-animation span::after {
+    right: -0.35rem !important;
+    width: 2px !important;
+}
+
+/* ROI / chart section stays consistent with original violet branding */
+.performance {
+    background:
+        radial-gradient(circle at 12% 14%, rgba(176,38,255,0.13), transparent 28%),
+        radial-gradient(circle at 88% 76%, rgba(176,38,255,0.075), transparent 30%),
+        transparent;
+}
+
+.performance-stat strong {
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
+    text-shadow: 0 0 24px rgba(176,38,255,0.13);
+}
+
+.performance-eyebrow,
+.chart-kicker {
+    color: var(--main-color);
+}
+
+.chart-badge {
+    color: #ffffff;
+}
+
+/* Form controls: black base + purple focus instead of cool blue */
+.contact form .input-box input,
+.contact form textarea {
+    border-color: rgba(176,38,255,0.18);
+    background:
+        linear-gradient(145deg, rgba(176,38,255,0.04), rgba(255,255,255,0.015)),
+        rgba(8,8,8,0.78);
+}
+
+.contact form .input-box input:focus,
+.contact form textarea:focus {
+    border-color: rgba(176,38,255,0.62);
+    background:
+        linear-gradient(145deg, rgba(176,38,255,0.075), rgba(255,255,255,0.02)),
+        rgba(8,8,8,0.84);
+    box-shadow:
+        0 0 0 4px rgba(176,38,255,0.085),
+        0 0 24px rgba(176,38,255,0.055),
+        inset 0 1px 0 rgba(255,255,255,0.07);
+}
+
+/* Original purple timeline identity */
+.timeline-items::before {
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(176,38,255,0.9) 8%,
+        rgba(176,38,255,0.9) 92%,
+        transparent
+    );
+}
+
+.timeline-dot {
+    border-color: var(--main-color);
+    background: #ffffff;
+    box-shadow:
+        0 0 0 6px rgba(176,38,255,0.10),
+        0 0 18px rgba(176,38,255,0.28);
+}
+
+/* Skill icons regain purple frame */
+.skills-box img {
+    border-color: rgba(176,38,255,0.28);
+    box-shadow: 0 0 20px rgba(176,38,255,0.07);
+}
+
+/* Keep mobile navigation vivid but readable */
+@media (max-width: 900px) {
+    .navbar {
+        border-color: rgba(176,38,255,0.24);
+        background:
+            linear-gradient(145deg, rgba(176,38,255,0.11), rgba(255,255,255,0.025)),
+            rgba(8,8,8,0.92);
+        box-shadow:
+            0 26px 70px rgba(0,0,0,0.44),
+            inset 0 1px 0 rgba(255,255,255,0.10);
+    }
+
+    .navbar a {
+        border-color: rgba(176,38,255,0.08);
+        background: rgba(176,38,255,0.035);
+    }
+
+    .navbar a.active,
+    .navbar a:hover {
+        background: rgba(176,38,255,0.14);
+        border-color: rgba(176,38,255,0.22);
+    }
+}
+
+/* Reduced motion: keep text visible rather than clipping it */
+@media (prefers-reduced-motion: reduce) {
+    .text-animation span::before {
+        clip-path: inset(0 0 0 0) !important;
+        animation: words 20s infinite !important;
+    }
+
+    .text-animation span::after {
+        animation: none !important;
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================================
+   TYPEWRITER — MOVING CARET FIX
+   Uses actual span text from JavaScript. The border-right caret is attached
+   to the rendered text width, so it moves forward/back with every letter.
+   ===================================================================== */
+
+.text-animation span {
+    position: relative;
+    display: inline-block;
+    min-width: 1px;
+    width: auto;
+    padding-right: 0.35rem;
+    white-space: nowrap;
+    color: var(--main-color);
+    -webkit-text-fill-color: var(--main-color);
+    border-right: 2px solid var(--main-color);
+    line-height: 1.15;
+    vertical-align: baseline;
+    animation: movingCaretBlink 0.75s step-end infinite;
+}
+
+/* Disable all previous pseudo-element typewriter implementations */
+.text-animation span::before,
+.text-animation span::after {
+    content: none !important;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    animation: none !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+@keyframes movingCaretBlink {
+    0%, 48% {
+        border-right-color: var(--main-color);
+    }
+    49%, 100% {
+        border-right-color: transparent;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .text-animation span {
+        animation: none;
+        border-right-color: var(--main-color);
     }
 }
