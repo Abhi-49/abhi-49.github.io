@@ -12,10 +12,6 @@
     <meta name="theme-color" content="#080808">
 
     <!-- Social sharing -->
-    <link rel="canonical" href="https://abhi-49.github.io/websites.html">
-
-    <meta property="og:url" content="https://abhi-49.github.io/websites.html">
-    <meta property="og:image" content="https://abhi-49.github.io/Website%201.png">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_AE">
     <meta property="og:title" content="Live Website Projects | Abhishek Nadar">
@@ -739,6 +735,64 @@
             }
         }
     </style>
+
+<style>
+/* Final mobile hamburger fix */
+@media (max-width: 1100px) {
+    header,
+    .header {
+        overflow: visible !important;
+    }
+
+    #menu-icon {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+        z-index: 6001 !important;
+    }
+
+    .navbar {
+        position: absolute !important;
+        top: calc(100% + 10px) !important;
+        left: 0 !important;
+        width: 100% !important;
+        max-height: calc(100dvh - 95px) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        display: none !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.55rem !important;
+        padding: 1.1rem !important;
+        border: 1px solid rgba(176,38,255,0.24) !important;
+        border-radius: 16px !important;
+        background:
+            linear-gradient(145deg, rgba(176,38,255,0.11), rgba(255,255,255,0.025)),
+            rgba(8,8,8,0.97) !important;
+        -webkit-backdrop-filter: blur(26px) saturate(150%) !important;
+        backdrop-filter: blur(26px) saturate(150%) !important;
+        box-shadow: 0 26px 70px rgba(0,0,0,0.44) !important;
+        z-index: 6000 !important;
+    }
+
+    .navbar.active {
+        display: flex !important;
+    }
+
+    .navbar a {
+        display: flex !important;
+        width: 100% !important;
+        min-height: 46px !important;
+        align-items: center !important;
+        margin: 0 !important;
+        padding: 1rem 1.2rem !important;
+        font-size: 1.45rem !important;
+        text-align: left !important;
+    }
+}
+</style>
+
 </head>
 
 <body>
@@ -922,6 +976,82 @@
         </p>
     </footer>
 
-    <script src="/js/script.js"></script>
+    <!-- Self-contained responsive navigation -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuIcon = document.getElementById("menu-icon");
+            const navbar = document.querySelector(".navbar");
+
+            if (!menuIcon || !navbar) return;
+
+            menuIcon.setAttribute("role", "button");
+            menuIcon.setAttribute("tabindex", "0");
+            menuIcon.setAttribute("aria-expanded", "false");
+            menuIcon.setAttribute("aria-label", "Open navigation menu");
+
+            function setMenu(open) {
+                navbar.classList.toggle("active", open);
+                menuIcon.classList.toggle("bx-x", open);
+                menuIcon.classList.toggle("bx-menu", !open);
+                menuIcon.setAttribute("aria-expanded", open ? "true" : "false");
+                menuIcon.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+
+                if (!open) {
+                    const projectDropdown = navbar.querySelector(".nav-dropdown");
+                    if (projectDropdown && projectDropdown.hasAttribute("open")) {
+                        projectDropdown.removeAttribute("open");
+                    }
+                }
+            }
+
+            function toggleMenu(event) {
+                if (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                setMenu(!navbar.classList.contains("active"));
+            }
+
+            menuIcon.addEventListener("click", toggleMenu);
+
+            menuIcon.addEventListener("keydown", function (event) {
+                if (event.key === "Enter" || event.key === " ") {
+                    toggleMenu(event);
+                }
+            });
+
+            navbar.querySelectorAll("a").forEach(function (link) {
+                link.addEventListener("click", function () {
+                    if (window.innerWidth <= 1100) {
+                        setMenu(false);
+                    }
+                });
+            });
+
+            document.addEventListener("click", function (event) {
+                if (
+                    window.innerWidth <= 1100 &&
+                    navbar.classList.contains("active") &&
+                    !navbar.contains(event.target) &&
+                    event.target !== menuIcon
+                ) {
+                    setMenu(false);
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape") {
+                    setMenu(false);
+                }
+            });
+
+            window.addEventListener("resize", function () {
+                if (window.innerWidth > 1100) {
+                    setMenu(false);
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
