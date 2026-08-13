@@ -4423,3 +4423,176 @@ header,
         pointer-events: auto !important;
     }
 }
+
+
+/* =====================================================================
+   MY PROJECTS SUBMENU V2 — ISOLATED FINAL FIX
+   Unique class names prevent older dropdown rules from interfering.
+   ===================================================================== */
+
+.projects-menu-v2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 7000;
+}
+
+.projects-menu-v2__toggle {
+    display: inline-flex;
+    min-height: 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.05rem;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: transparent;
+    color: rgba(255,255,255,0.72);
+    font-size: 1.35rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.22s ease;
+}
+
+.projects-menu-v2__toggle span {
+    color: inherit;
+}
+
+.projects-menu-v2__toggle i {
+    color: var(--main-color);
+    font-size: 1.8rem;
+    transition: transform 0.22s ease;
+}
+
+.projects-menu-v2.is-open .projects-menu-v2__toggle,
+.projects-menu-v2__toggle:hover,
+.projects-menu-v2__toggle:focus-visible {
+    color: #ffffff;
+    border-color: rgba(176,38,255,0.30);
+    background: rgba(176,38,255,0.13);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.10);
+}
+
+.projects-menu-v2.is-open .projects-menu-v2__toggle i {
+    transform: rotate(180deg);
+}
+
+.projects-menu-v2__panel {
+    position: absolute;
+    top: calc(100% + 1rem);
+    left: 50%;
+    width: 220px;
+    padding: 0.8rem;
+    display: none;
+    gap: 0.55rem;
+    border: 1px solid rgba(176,38,255,0.28);
+    border-radius: 16px;
+    background:
+        linear-gradient(145deg, rgba(176,38,255,0.13), rgba(255,255,255,0.025)),
+        rgba(8,8,8,0.97);
+    -webkit-backdrop-filter: blur(26px) saturate(150%);
+    backdrop-filter: blur(26px) saturate(150%);
+    box-shadow:
+        0 24px 62px rgba(0,0,0,0.48),
+        0 0 30px rgba(176,38,255,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.11);
+    transform: translateX(-50%);
+    z-index: 8000;
+}
+
+.projects-menu-v2.is-open .projects-menu-v2__panel {
+    display: grid !important;
+}
+
+.navbar .projects-menu-v2__panel a {
+    width: 100%;
+    min-height: 44px;
+    margin: 0 !important;
+    padding: 0.95rem 1.05rem !important;
+    display: flex !important;
+    align-items: center;
+    gap: 0.85rem;
+    border: 1px solid rgba(176,38,255,0.08) !important;
+    border-radius: 11px !important;
+    color: rgba(255,255,255,0.86) !important;
+    background: rgba(255,255,255,0.025) !important;
+    font-size: 1.35rem !important;
+    font-weight: 600;
+    text-align: left;
+}
+
+.navbar .projects-menu-v2__panel a i {
+    width: 22px;
+    flex: 0 0 22px;
+    color: var(--main-color);
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.navbar .projects-menu-v2__panel a span {
+    color: inherit;
+}
+
+.navbar .projects-menu-v2__panel a:hover,
+.navbar .projects-menu-v2__panel a:focus-visible {
+    color: #fff !important;
+    border-color: rgba(176,38,255,0.28) !important;
+    background: rgba(176,38,255,0.15) !important;
+}
+
+/* Mobile/tablet: submenu is part of the vertical menu, never absolute. */
+@media (max-width: 1100px) {
+    header,
+    .header {
+        overflow: visible !important;
+    }
+
+    .projects-menu-v2 {
+        width: 100% !important;
+        display: block !important;
+        position: relative !important;
+    }
+
+    .projects-menu-v2__toggle {
+        width: 100% !important;
+        min-height: 46px !important;
+        justify-content: space-between !important;
+        padding: 1rem 1.2rem !important;
+        border-color: rgba(176,38,255,0.10);
+        background: rgba(176,38,255,0.035);
+        font-size: 1.4rem !important;
+        text-align: left;
+    }
+
+    .projects-menu-v2__panel {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        margin: 0.55rem 0 0 !important;
+        padding: 0.55rem !important;
+        transform: none !important;
+        border: 1px solid rgba(176,38,255,0.18) !important;
+        border-radius: 12px !important;
+        background:
+            linear-gradient(145deg, rgba(176,38,255,0.10), rgba(255,255,255,0.02)),
+            rgba(15,8,18,0.94) !important;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.05) !important;
+        z-index: auto !important;
+    }
+
+    .projects-menu-v2.is-open .projects-menu-v2__panel {
+        display: grid !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+
+    .navbar .projects-menu-v2__panel a {
+        min-height: 48px !important;
+        padding: 1.05rem 1.15rem !important;
+        color: #ffffff !important;
+        background: rgba(176,38,255,0.07) !important;
+        border-color: rgba(176,38,255,0.16) !important;
+    }
+}
