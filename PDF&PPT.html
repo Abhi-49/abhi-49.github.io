@@ -2,391 +2,1120 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- SEO -->
+    <title>Brochure & Presentation Design Portfolio Dubai | Abhishek Nadar</title>
+    <meta name="description" content="Explore brochure, presentation, PDF and marketing report designs by Abhishek Nadar, a Dubai-based Digital Marketing Manager experienced in visual communication, Canva, presentations and digital content.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="author" content="Abhishek Nadar">
+    <meta name="theme-color" content="#080808">
+
+    <!-- Social sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_AE">
+    <meta property="og:title" content="Brochure & Presentation Design Portfolio | Abhishek Nadar">
+    <meta property="og:description" content="A portfolio of brochure, presentation, PDF and marketing report designs by Dubai-based Digital Marketing Manager Abhishek Nadar.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Brochure & Presentation Design Portfolio | Abhishek Nadar">
+    <meta name="twitter:description" content="Explore brochure, presentation and marketing report design work by Abhishek Nadar.">
+
+    <!-- Performance -->
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/Abhi-Favicon.svg">
-    <link rel="shortcut svg+xml" href="/Abhi-Favicon.svg">
-    <title>PDF & PPT Designs</title>
+    <link rel="shortcut icon" href="/Abhi-Favicon.svg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Brochure and Presentation Design Portfolio",
+      "description": "A collection of brochure, presentation, PDF and marketing report designs by Abhishek Nadar.",
+      "about": {
+        "@type": "Person",
+        "name": "Abhishek Nadar",
+        "jobTitle": "Digital Marketing Manager",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Dubai",
+          "addressCountry": "AE"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/abhishek-nadar/",
+          "https://www.instagram.com/___heavenly_demon___/"
+        ]
+      }
+    }
+    </script>
+
     <style>
         * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    scroll-behavior: smooth;
-    font-family: "Poppins", sans-serif;
-}
-:root {
-    --bg-color: #080808;
-    --second-bg-color: #131313;
-    --text-color: white;
-    --main-color: #B026FF;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            scroll-behavior: smooth;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+                         "Segoe UI", Helvetica, Arial, sans-serif;
+        }
 
-html{
-    font-size: 60%;
-    overflow-x: hidden;
-}
-body{
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
+        :root {
+            --bg-color: #080808;
+            --second-bg-color: #131313;
+            --text-color: #ffffff;
+            --muted-color: rgba(255,255,255,0.68);
+            --main-color: #B026FF;
+            --glass-border: rgba(176, 38, 255, 0.24);
+            --glass-border-soft: rgba(176, 38, 255, 0.14);
+        }
 
-h2 {
-    font-size: 4rem;
-    text-align: center;
-    margin: 2rem 0;
-}
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 100px;
+        }
 
-section {
-    min-height: 100vh;
-    padding: 10rem 12% 10rem;
-}
-.poster{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15rem;
-}
-.psoter-content{
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    text-align: left;
-    justify-content: center;
-    margin-top: 3rem;
-}
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: clip;
+            color: var(--text-color);
+            background:
+                radial-gradient(circle at 12% 8%, rgba(176,38,255,0.18), transparent 28%),
+                radial-gradient(circle at 88% 26%, rgba(176,38,255,0.10), transparent 30%),
+                radial-gradient(circle at 55% 92%, rgba(176,38,255,0.06), transparent 30%),
+                linear-gradient(180deg, #080808 0%, #0b090d 50%, #080808 100%);
+        }
 
-span{
-    color: var(--main-color);
-}
-.logo span{
-    color: var(--main-color);
-}
+        body::before {
+            content: "";
+            position: fixed;
+            inset: -15%;
+            z-index: -2;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 22% 28%, rgba(176,38,255,0.14), transparent 23%),
+                radial-gradient(circle at 76% 22%, rgba(176,38,255,0.08), transparent 24%),
+                radial-gradient(circle at 66% 76%, rgba(176,38,255,0.06), transparent 23%);
+            filter: blur(20px) saturate(120%);
+            animation: ambientDrift 18s ease-in-out infinite alternate;
+        }
 
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
+        @keyframes ambientDrift {
+            from { transform: translate3d(-1%, -1%, 0) scale(1); }
+            to { transform: translate3d(1.5%, 1%, 0) scale(1.02); }
+        }
 
-.card {
-    background-color: var(--second-bg-color);
-    border-radius: 10px;
-    overflow: hidden;
-    width: 350px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    display: flex;
-    transition: 0.4s ease-in-out;
-    cursor: pointer;
-    flex-direction: column;
-    border: 3px solid rgba(238, 238, 238, 0.2);
-    border-radius: 2rem;
-    gap: 1.5rem;
-    color: white;
-}
+        img,
+        svg {
+            max-width: 100%;
+        }
 
-.card img {
-    width: 300px;
-    height: auto;
-    border-radius: 10px;
-    justify-content: center;
-}
+        span {
+            color: var(--main-color);
+        }
 
-.card h3 {
-    padding: 10px;
-    font-size: 18px;
-    font-weight: 500;
-}
-.card:hover{
-    border: 3px solid var(--main-color);
-    transform: translateY(-10px)scale(1.03);
-    box-shadow: 0 0 50px var(--main-color);
-}
-.live-demo-btn {
-    background-color: var(--main-color);
-    color: white;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    transition: background-color 0.3s;
-}
+        section {
+            min-height: 100vh;
+            padding: 13rem max(6%, calc((100vw - 1180px) / 2)) 9rem;
+            scroll-margin-top: 100px;
+        }
 
-.live-demo-btn:hover {
-    background-color: #8e1ccc;
-}
+        /* ============================
+           LIQUID GLASS HEADER
+           ============================ */
 
-header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 4rem 12% 4rem;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 5;
-}
-.logo{
-    font-size: 3rem;
-    color: var(--text-color);
-    font-weight: 800;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-.logo:hover{
-    transform: scale(1.1);
-}
-.logo span{
-    text-shadow: 0 0 25px var(--main-color);
-}
-.navbar a{
-    font-size: 1.8rem;
-    color: var(--text-color);
-    margin-left: 4rem;
-    font-weight: 500;
-    transition: 0.3s ease;
-    border-bottom: 3px solid transparent;
-}
-.navbar a:hover,
-.navbar a.active{
-    color: var(--main-color);
-    border-bottom: 3px solid var(--main-color);
-}
-#menu-icon {
-    font-size: 3.6rem;
-    color: var(--main-color);
-    display: none;
-}
+        header,
+        .header {
+            position: fixed;
+            top: max(14px, env(safe-area-inset-top));
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(1180px, calc(100% - 28px));
+            padding: 1.35rem 1.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            overflow: visible;
+            border: 1px solid var(--glass-border);
+            border-radius: 18px;
+            background:
+                linear-gradient(135deg, rgba(176,38,255,0.09), rgba(255,255,255,0.03)),
+                rgba(8,8,8,0.74);
+            -webkit-backdrop-filter: blur(26px) saturate(150%);
+            backdrop-filter: blur(26px) saturate(150%);
+            box-shadow:
+                0 18px 52px rgba(0,0,0,0.34),
+                inset 0 1px 0 rgba(255,255,255,0.15);
+        }
 
-.footer{
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    padding: 40px 0;
-    background-color: var(--second-bg-color);
-}
-.footer .social{
-    text-align: center;
-    padding-bottom: 25px;
-    color: var(--main-color);
-}
-.footer .social a{
-    font-size: 25px;
-    color: var(--main-color);
-    border: 2px solid var(--main-color);
-    width: 42px;
-    height: 42px;
-    line-height: 42px;
-    display: inline-block;
-    text-align: center;
-    border-radius: 50%;
-    margin: 0 10px;
-    transition: 0.3s ease-in-out;
-}
-.footer .social a:hover{
-    transform: scale(1.2)translateY(-10px);
-    background-color: var(--main-color);
-    color: black;
-    box-shadow: 0 0 25px var(--main-color);
-}
-.footer ul{
-    margin-top: 0;
-    padding: 0;
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 0;
-    text-align: center;
-}
-.footer ul li a{
-    color: white;
-    border-bottom: 3px solid transparent;
-    transition: 0.3s ease-in-out;
-}
-.footer ul li a:hover{
-    border-bottom: 3px solid var(--main-color);
-}
-.footer ul li{
-    display: inline-block;
-    padding: 0 15px;
-}
-.footer .copyright{
-    margin-top: 50px;
-    text-align: center;
-    font-size: 16px;
-    color: white;
-}
-@media(max-width:768px){
-    #menu-icon{
-        display: block;
-    }
-    .navbar {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(20px);
-        border-bottom-left-radius: 2rem;
-        border-bottom-right-radius: 2rem;
-        border-left: 2px solid var(--main-color);
-        border-bottom: 2px solid var(--main-color);
-        border-right: 2px solid var(--main-color);
-        flex-direction: column;
-        display: none;
-        text-align: center;
-        padding: 2rem 0;
-    }
-    .navbar a {
-        margin: 1rem 0;
-        font-size: 2rem;
-    }
-    .navbar.active {
-        display: flex;
-    }
-}
-@media(max-width:480px){
-    #menu-icon{
-        display: block;
-    }
-    .navbar {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(20px);
-        border-bottom-left-radius: 2rem;
-        border-bottom-right-radius: 2rem;
-        border-left: 2px solid var(--main-color);
-        border-bottom: 2px solid var(--main-color);
-        border-right: 2px solid var(--main-color);
-        flex-direction: column;
-        display: none;
-        text-align: center;
-        padding: 2rem 0;
-    }
-    .navbar a {
-        margin: 1rem 0;
-        font-size: 2rem;
-    }
-    .navbar.active {
-        display: flex;
-    }
-    
-}
+        header::before,
+        .header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            border-radius: inherit;
+            background:
+                linear-gradient(
+                    110deg,
+                    rgba(255,255,255,0.13),
+                    rgba(176,38,255,0.045) 28%,
+                    transparent 56%,
+                    rgba(176,38,255,0.07)
+                );
+        }
 
+        header::after,
+        .header::after {
+            content: "";
+            position: absolute;
+            left: 10%;
+            right: 10%;
+            top: 0;
+            height: 1px;
+            pointer-events: none;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.48), transparent);
+        }
+
+        .logo,
+        .navbar,
+        #menu-icon {
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            font-size: 2.6rem;
+            color: var(--text-color);
+            font-weight: 800;
+            letter-spacing: -0.07rem;
+            transition: 0.25s ease;
+        }
+
+        .logo:hover {
+            transform: translateY(-1px);
+        }
+
+        .logo span {
+            color: var(--main-color);
+            text-shadow: 0 0 24px rgba(176,38,255,0.32);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .navbar a {
+            font-size: 1.45rem;
+            color: rgba(255,255,255,0.72);
+            font-weight: 600;
+            padding: 0.9rem 1.2rem;
+            border-radius: 11px;
+            border: 1px solid transparent;
+            transition: 0.25s ease;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #fff;
+            border-color: rgba(176,38,255,0.26);
+            background: rgba(176,38,255,0.12);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.10);
+        }
+
+        #menu-icon {
+            min-width: 44px;
+            min-height: 44px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.3rem;
+            color: var(--main-color);
+            cursor: pointer;
+        }
+
+        /* ============================
+           PAGE HEADER
+           ============================ */
+
+        .portfolio-section {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .portfolio-content {
+            width: 100%;
+            max-width: 1180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .section-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            margin-bottom: 1.3rem;
+            color: var(--main-color);
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 0.16rem;
+            text-transform: uppercase;
+        }
+
+        .portfolio-content > h1 {
+            max-width: 900px;
+            margin: 0;
+            color: #fff;
+            font-size: clamp(5rem, 8vw, 8rem);
+            line-height: 1.02;
+            letter-spacing: -0.3rem;
+        }
+
+        .portfolio-content > h1 span {
+            color: var(--main-color);
+        }
+
+        .portfolio-intro {
+            max-width: 830px;
+            margin: 2rem auto 5rem;
+            color: var(--muted-color);
+            font-size: 1.6rem;
+            line-height: 1.8;
+        }
+
+        /* ============================
+           CATEGORY SECTIONS
+           ============================ */
+
+        .design-category {
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .design-category + .design-category {
+            margin-top: 7rem;
+        }
+
+        .category-heading {
+            margin-bottom: 2.6rem;
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .category-heading-copy {
+            max-width: 700px;
+        }
+
+        .category-kicker {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--main-color);
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: 0.12rem;
+            text-transform: uppercase;
+        }
+
+        .category-heading h2 {
+            margin: 0;
+            color: #fff;
+            font-size: clamp(3rem, 4.5vw, 4.6rem);
+            line-height: 1.12;
+            letter-spacing: -0.12rem;
+        }
+
+        .category-heading p {
+            max-width: 470px;
+            color: var(--muted-color);
+            font-size: 1.4rem;
+            line-height: 1.7;
+        }
+
+        /* ============================
+           CARDS
+           ============================ */
+
+        .card-container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            min-width: 0;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--glass-border-soft);
+            border-radius: 24px;
+            background:
+                linear-gradient(145deg, rgba(176,38,255,0.055), rgba(255,255,255,0.018)),
+                rgba(8,8,8,0.78);
+            box-shadow:
+                0 18px 44px rgba(0,0,0,0.28),
+                inset 0 1px 0 rgba(255,255,255,0.05);
+            transition:
+                transform 0.28s cubic-bezier(.2,.8,.2,1),
+                border-color 0.28s ease,
+                box-shadow 0.28s ease;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(255,255,255,0.06),
+                    transparent 30%,
+                    transparent 72%,
+                    rgba(176,38,255,0.035)
+                );
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(176,38,255,0.40);
+            box-shadow:
+                0 25px 58px rgba(0,0,0,0.35),
+                0 0 28px rgba(176,38,255,0.07),
+                inset 0 1px 0 rgba(255,255,255,0.08);
+        }
+
+        .card-media {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+            border-radius: 17px;
+            background: rgba(255,255,255,0.025);
+        }
+
+        .card-media img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            border-radius: inherit;
+            transition:
+                transform 0.42s ease,
+                filter 0.32s ease;
+        }
+
+        .card:hover .card-media img {
+            transform: scale(1.03);
+            filter: brightness(0.90);
+        }
+
+        .file-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.65rem 0.9rem;
+            border: 1px solid rgba(176,38,255,0.28);
+            border-radius: 999px;
+            color: #fff;
+            font-size: 1.05rem;
+            font-weight: 800;
+            background:
+                linear-gradient(135deg, rgba(255,255,255,0.10), rgba(176,38,255,0.07)),
+                rgba(8,8,8,0.68);
+            -webkit-backdrop-filter: blur(14px);
+            backdrop-filter: blur(14px);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
+        }
+
+        .file-badge,
+        .file-badge i {
+            color: #fff;
+        }
+
+        .card-body {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            padding: 1.55rem 0.55rem 0.4rem;
+            text-align: left;
+        }
+
+        .project-type {
+            margin-bottom: 0.55rem;
+            color: var(--main-color);
+            font-size: 1.08rem;
+            font-weight: 800;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+        }
+
+        .card h3 {
+            min-height: 5rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            font-size: 1.82rem;
+            line-height: 1.35;
+            font-weight: 700;
+            letter-spacing: -0.035rem;
+        }
+
+        .view-file-btn {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            min-height: 44px;
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1.1rem 1.4rem;
+            border: 1px solid rgba(176,38,255,0.38);
+            border-radius: 12px;
+            color: #fff;
+            font-size: 1.28rem;
+            font-weight: 700;
+            background:
+                linear-gradient(135deg, rgba(255,255,255,0.11), rgba(255,255,255,0.03)),
+                linear-gradient(135deg, rgba(176,38,255,0.64), rgba(119,27,180,0.50));
+            -webkit-backdrop-filter: blur(18px) saturate(150%);
+            backdrop-filter: blur(18px) saturate(150%);
+            box-shadow:
+                0 12px 28px rgba(0,0,0,0.22),
+                inset 0 1px 0 rgba(255,255,255,0.19);
+            transition: 0.25s ease;
+        }
+
+        .view-file-btn::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 24% 0%, rgba(255,255,255,0.24), transparent 34%);
+        }
+
+        .view-file-btn span,
+        .view-file-btn i {
+            position: relative;
+            z-index: 1;
+            color: #fff;
+        }
+
+        .view-file-btn:hover {
+            transform: translateY(-2px);
+            border-color: rgba(176,38,255,0.58);
+            box-shadow:
+                0 18px 38px rgba(0,0,0,0.28),
+                0 0 24px rgba(176,38,255,0.10),
+                inset 0 1px 0 rgba(255,255,255,0.23);
+        }
+
+        /* ============================
+           FOOTER
+           ============================ */
+
+        .footer {
+            position: relative;
+            width: 100%;
+            padding: 5rem max(5%, env(safe-area-inset-left)) max(3.5rem, env(safe-area-inset-bottom));
+            border-top: 1px solid rgba(176,38,255,0.12);
+            background:
+                linear-gradient(180deg, rgba(176,38,255,0.02), transparent),
+                #0a0a0d;
+        }
+
+        .footer .social {
+            padding-bottom: 2.2rem;
+            text-align: center;
+        }
+
+        .footer .social a {
+            width: 42px;
+            height: 42px;
+            margin: 0 0.55rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(176,38,255,0.30);
+            border-radius: 50%;
+            color: #fff;
+            font-size: 2.1rem;
+            background:
+                linear-gradient(135deg, rgba(255,255,255,0.08), rgba(176,38,255,0.06)),
+                rgba(176,38,255,0.11);
+            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.14);
+            transition: 0.25s ease;
+        }
+
+        .footer .social a:hover {
+            transform: translateY(-4px);
+            background: rgba(176,38,255,0.18);
+            border-color: rgba(176,38,255,0.48);
+            box-shadow: 0 14px 28px rgba(176,38,255,0.09);
+        }
+
+        .footer ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.4rem 0;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        .footer ul li {
+            padding: 0 1.2rem;
+        }
+
+        .footer ul li a {
+            color: rgba(255,255,255,0.62);
+            font-size: 1.4rem;
+            transition: 0.25s ease;
+        }
+
+        .footer ul li a:hover,
+        .footer ul li a.active {
+            color: var(--main-color);
+        }
+
+        .footer .copyright {
+            margin-top: 2.6rem;
+            color: rgba(255,255,255,0.42);
+            font-size: 1.25rem;
+            text-align: center;
+        }
+
+        /* ============================
+           RESPONSIVE
+           ============================ */
+
+        @media (max-width: 1100px) {
+            .card-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            html {
+                font-size: 60%;
+            }
+
+            header,
+            .header {
+                top: max(10px, env(safe-area-inset-top));
+                width: calc(100% - 22px);
+                padding: 1.15rem 1.4rem;
+            }
+
+            #menu-icon {
+                display: flex;
+            }
+
+            .navbar {
+                position: absolute;
+                top: calc(100% + 10px);
+                left: 0;
+                width: 100%;
+                max-height: calc(100dvh - 90px);
+                overflow-y: auto;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.7rem;
+                padding: 1.2rem;
+                border: 1px solid rgba(176,38,255,0.22);
+                border-radius: 16px;
+                background:
+                    linear-gradient(145deg, rgba(176,38,255,0.10), rgba(255,255,255,0.02)),
+                    rgba(8,8,8,0.94);
+                -webkit-backdrop-filter: blur(26px) saturate(150%);
+                backdrop-filter: blur(26px) saturate(150%);
+                box-shadow: 0 25px 65px rgba(0,0,0,0.42);
+            }
+
+            .navbar.active {
+                display: flex;
+            }
+
+            .navbar a {
+                min-height: 46px;
+                display: flex;
+                align-items: center;
+                margin: 0;
+                padding: 1rem 1.2rem;
+                font-size: 1.45rem;
+            }
+
+            section {
+                padding:
+                    12rem max(18px, env(safe-area-inset-left))
+                    7rem max(18px, env(safe-area-inset-right));
+            }
+
+            .portfolio-content > h1 {
+                font-size: clamp(4.6rem, 12vw, 6.2rem);
+                letter-spacing: -0.18rem;
+            }
+
+            .portfolio-intro {
+                margin-bottom: 4rem;
+                font-size: 1.48rem;
+            }
+
+            .category-heading {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .category-heading p {
+                max-width: 650px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .portfolio-content {
+                text-align: left;
+                align-items: stretch;
+            }
+
+            .section-eyebrow {
+                align-self: flex-start;
+            }
+
+            .portfolio-intro {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .card-container {
+                grid-template-columns: 1fr;
+                max-width: 430px;
+            }
+
+            .card h3 {
+                min-height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 58%;
+            }
+
+            .logo {
+                font-size: 2.25rem;
+            }
+
+            section {
+                padding-left: max(16px, env(safe-area-inset-left));
+                padding-right: max(16px, env(safe-area-inset-right));
+            }
+
+            .portfolio-content > h1 {
+                font-size: clamp(4.2rem, 14vw, 5.6rem);
+                line-height: 1.04;
+            }
+
+            .design-category + .design-category {
+                margin-top: 5.5rem;
+            }
+
+            .card {
+                padding: 1rem;
+                border-radius: 20px;
+            }
+
+            .card-media {
+                border-radius: 15px;
+            }
+
+            .footer {
+                padding-left: max(16px, env(safe-area-inset-left));
+                padding-right: max(16px, env(safe-area-inset-right));
+            }
+
+            .footer ul li {
+                padding: 0 0.7rem;
+            }
+        }
+
+        @media (max-width: 359px) {
+            html {
+                font-size: 56%;
+            }
+
+            header,
+            .header {
+                width: calc(100% - 14px);
+            }
+
+            section {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            .portfolio-content > h1 {
+                font-size: 4.1rem;
+                letter-spacing: -0.10rem;
+            }
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            .logo:hover,
+            .card:hover,
+            .card:hover .card-media img,
+            .view-file-btn:hover,
+            .footer .social a:hover {
+                transform: none;
+            }
+
+            .card:hover .card-media img {
+                filter: none;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+            header,
+            .header,
+            .navbar,
+            .view-file-btn,
+            .file-badge,
+            .footer .social a {
+                background: rgba(20,20,24,0.97);
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <header class="header">
-        <a href="/index.html" class="logo">Abhishek
-        <span>Nadar</span></a>
-    
-        <i class='bx bx-menu' id="menu-icon"></i>
+        <a href="/index.html" class="logo" aria-label="Abhishek Nadar portfolio home">
+            Abhishek <span>Nadar</span>
+        </a>
 
-        <nav class="navbar">
-            <a href="/index.html" >Home</a>
+        <i class='bx bx-menu' id="menu-icon" aria-label="Open navigation menu"></i>
+
+        <nav class="navbar" aria-label="Portfolio navigation">
+            <a href="/index.html">Home</a>
             <a href="/websites.html">Live Websites</a>
             <a href="/Posters.html">Posters</a>
-            <a href="/PDF&PPT.html" class="active">PDF & PPT</a>
+            <a href="/PDF&PPT.html" class="active">PDF &amp; PPT</a>
         </nav>
     </header>
 
-    <section class="poster" id="poster">
-        <div class="poster-content">
-            <h2>Brochure Designs</h2>
-        <div class="card-container">
-            <div class="card">
-                <a href="/Avishkar Acrylic LLC.pdf" target="_blank">
-                    <img src="/Avishkar Acrylic LLC img.png" alt="Brochure Design 1">
-                </a>
-            </div>
-            <div class="card">
-                <a href="/ICARETM - 2024 Dubai.pdf" target="_blank">
-                    <img src="/ICARETM - 2024 Dubai img.png" alt="Brochure Design 2">
-                </a>
-            </div>
-            <div class="card">
-                <a href="/LACC Brochure.pdf" target="_blank">
-                    <img src="/LACC Brochure img.png" alt="Brochure Design 3">
-                </a>
-            </div>
-            <div class="card">
-                <a href="/LAUC Brochure.pdf" target="_blank">
-                    <img src="/LAUC Brochure img.png" alt="Brochure Design 4">
-                </a>
-            </div>
-        </div>
+    <main>
+        <section class="portfolio-section" id="designs">
+            <div class="portfolio-content">
 
-        <h2>Presentation Designs</h2>
-        <div class="card-container">
-            <div class="card">
-                <a href="/LACC PPT.pdf" target="_blank">
-                    <img src="/LACC PPT img.png" alt="Presentation Design 1">
-                </a>
-            </div>
-            <div class="card">
-                <a href="/LAUC Academic Program.pdf" target="_blank">
-                    <img src="/LAUC Academic Program img.png" alt="Presentation Design 2">
-                </a>
-            </div>
-            <div class="card">
-                <a href="/Digital Marketing Report - November 2023.pdf" target="_blank">
-                    <img src="/Digital Marketing Report - November 2023 img.png" alt="Presentation Design 3">
-                </a>
-            </div>
-            <div class="card">
-                <a href="/DM Report (Nov 2023 - March 2024).pdf" target="_blank">
-                    <img src="/DM Report (Nov 2023 - March 2024) img.png" alt="Presentation Design 4">
-                </a>
-            </div>
-            
-        </div>
+                <span class="section-eyebrow">
+                    <i class='bx bx-file' aria-hidden="true"></i>
+                    Creative Portfolio
+                </span>
+
+                <h1>Brochure & Presentation <span>Designs</span></h1>
+
+                <p class="portfolio-intro">
+                    Selected brochure, presentation and marketing report projects showcasing my experience in
+                    visual communication, content structuring, Canva, presentation design and professional
+                    marketing collateral. Open any project to view the complete PDF.
+                </p>
+
+                <!-- Brochures -->
+                <div class="design-category">
+                    <div class="category-heading">
+                        <div class="category-heading-copy">
+                            <span class="category-kicker">Print & Digital Collateral</span>
+                            <h2>Brochure Designs</h2>
+                        </div>
+
+                        <p>
+                            Structured brochure layouts created to communicate services, programmes and brand information
+                            clearly while maintaining a professional visual hierarchy.
+                        </p>
+                    </div>
+
+                    <div class="card-container">
+
+                        <article class="card">
+                            <div class="card-media">
+                                <img src="/Avishkar Acrylic LLC img.png"
+                                     alt="Avishkar Acrylic LLC brochure design by Abhishek Nadar"
+                                     loading="lazy"
+                                     decoding="async">
+                                <span class="file-badge"><i class='bx bxs-file-pdf'></i> PDF</span>
+                            </div>
+                            <div class="card-body">
+                                <span class="project-type">Company Brochure</span>
+                                <h3>Avishkar Acrylic LLC</h3>
+                                <a class="view-file-btn"
+                                   href="/Avishkar Acrylic LLC.pdf"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Open Avishkar Acrylic LLC brochure PDF">
+                                    <span>View Full PDF</span>
+                                    <i class='bx bx-link-external' aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-media">
+                                <img src="/ICARETM - 2024 Dubai img.png"
+                                     alt="ICARETM 2024 Dubai brochure design by Abhishek Nadar"
+                                     loading="lazy"
+                                     decoding="async">
+                                <span class="file-badge"><i class='bx bxs-file-pdf'></i> PDF</span>
+                            </div>
+                            <div class="card-body">
+                                <span class="project-type">Event Brochure</span>
+                                <h3>ICARETM – 2024 Dubai</h3>
+                                <a class="view-file-btn"
+                                   href="/ICARETM - 2024 Dubai.pdf"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Open ICARETM 2024 Dubai brochure PDF">
+                                    <span>View Full PDF</span>
+                                    <i class='bx bx-link-external' aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-media">
+                                <img src="/LACC Brochure img.png"
+                                     alt="LACC education brochure design by Abhishek Nadar"
+                                     loading="lazy"
+                                     decoding="async">
+                                <span class="file-badge"><i class='bx bxs-file-pdf'></i> PDF</span>
+                            </div>
+                            <div class="card-body">
+                                <span class="project-type">Education Brochure</span>
+                                <h3>LACC Brochure</h3>
+                                <a class="view-file-btn"
+                                   href="/LACC Brochure.pdf"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Open LACC brochure PDF">
+                                    <span>View Full PDF</span>
+                                    <i class='bx bx-link-external' aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-media">
+                                <img src="/LAUC Brochure img.png"
+                                     alt="LAUC education brochure design by Abhishek Nadar"
+                                     loading="lazy"
+                                     decoding="async">
+                                <span class="file-badge"><i class='bx bxs-file-pdf'></i> PDF</span>
+                            </div>
+                            <div class="card-body">
+                                <span class="project-type">Education Brochure</span>
+                                <h3>LAUC Brochure</h3>
+                                <a class="view-file-btn"
+                                   href="/LAUC Brochure.pdf"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Open LAUC brochure PDF">
+                                    <span>View Full PDF</span>
+                                    <i class='bx bx-link-external' aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <!-- Presentations -->
+                <div class="design-category">
+                    <div class="category-heading">
+                        <div class="category-heading-copy">
+                            <span class="category-kicker">Presentations & Reporting</span>
+                            <h2>Presentation Designs</h2>
+                        </div>
+
+                        <p>
+                            Presentation and report layouts designed to make academic, business and marketing information
+                            easier to understand, present and review.
+                        </p>
+                    </div>
+
+                    <div class="card-container">
+
+                        <article class="card">
+                            <div class="card-media">
+                                <img src="/LACC PPT img.png"
+                                     alt="LACC presentation design by Abhishek Nadar"
+                                     loading="lazy"
+                                     decoding="async">
+                                <span class="file-badge"><i class='bx bxs-file-pdf'></i> PDF</span>
+                            </div>
+                            <div class="card-body">
+                                <span class="project-type">Presentation</span>
+                                <h3>LACC Presentation</h3>
+                                <a class="view-file-btn"
+                                   href="/LACC PPT.pdf"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Open LACC presentation PDF">
+                                    <span>View Presentation</span>
+                                    <i class='bx bx-link-external' aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-media">
+                                <img src="/LAUC Academic Program img.png"
+                                     alt="LAUC academic program presentation design by Abhishek Nadar"
+                                     loading="lazy"
+                                     decoding="async">
+                                <span class="file-badge"><i class='bx bxs-file-pdf'></i> PDF</span>
+                            </div>
+                            <div class="card-body">
+                                <span class="project-type">Academic Presentation</span>
+                                <h3>LAUC Academic Program</h3>
+                                <a class="view-file-btn"
+                                   href="/LAUC Academic Program.pdf"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Open LAUC Academic Program presentation PDF">
+                                    <span>View Presentation</span>
+                                    <i class='bx bx-link-external' aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-media">
+                                <img src="/Digital Marketing Report - November 2023 img.png"
+                                     alt="Digital Marketing Report November 2023 presentation design by Abhishek Nadar"
+                                     loading="lazy"
+                                     decoding="async">
+                                <span class="file-badge"><i class='bx bxs-file-pdf'></i> PDF</span>
+                            </div>
+                            <div class="card-body">
+                                <span class="project-type">Marketing Report</span>
+                                <h3>Digital Marketing Report – November 2023</h3>
+                                <a class="view-file-btn"
+                                   href="/Digital Marketing Report - November 2023.pdf"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Open Digital Marketing Report November 2023 PDF">
+                                    <span>View Report</span>
+                                    <i class='bx bx-link-external' aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-media">
+                                <img src="/DM Report (Nov 2023 - March 2024) img.png"
+                                     alt="Digital Marketing Report November 2023 to March 2024 presentation design by Abhishek Nadar"
+                                     loading="lazy"
+                                     decoding="async">
+                                <span class="file-badge"><i class='bx bxs-file-pdf'></i> PDF</span>
+                            </div>
+                            <div class="card-body">
+                                <span class="project-type">Marketing Report</span>
+                                <h3>Digital Marketing Report – Nov 2023 to Mar 2024</h3>
+                                <a class="view-file-btn"
+                                   href="/DM Report (Nov 2023 - March 2024).pdf"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Open Digital Marketing Report November 2023 to March 2024 PDF">
+                                    <span>View Report</span>
+                                    <i class='bx bx-link-external' aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
             </div>
         </section>
+    </main>
 
-        <footer class="footer">
-            <div class="social">
-                <a href="https://www.linkedin.com/in/abhishek-nadar/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://www.instagram.com/___heavenly_demon___/profilecard/?igsh=MXZ0cnJtN3ZpcGFsNA=="><i class='bx bxl-instagram-alt' ></i></a>
-                <a href="https://wa.me/00971525031087" target="_blank"><i class='bx bxl-whatsapp' ></i></a>
-            </div>
-            
-            <ul class="list">
-                <li>
-                    <a href="/index.html">Home</a>
-                </li>
+    <footer class="footer">
+        <div class="social">
+            <a href="https://www.linkedin.com/in/abhishek-nadar/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Abhishek Nadar on LinkedIn">
+                <i class='bx bxl-linkedin' aria-hidden="true"></i>
+            </a>
 
-                <li>
-                    <a href="/websites.html">Live Websites</a>
-                </li>
+            <a href="https://www.instagram.com/___heavenly_demon___/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Abhishek Nadar on Instagram">
+                <i class='bx bxl-instagram-alt' aria-hidden="true"></i>
+            </a>
 
-                <li>
-                    <a href="/Posters.html">Posters</a>
-                </li>
+            <a href="https://wa.me/00971525031087"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Contact Abhishek Nadar on WhatsApp">
+                <i class='bx bxl-whatsapp' aria-hidden="true"></i>
+            </a>
+        </div>
 
-                <li>
-                    <a href="/PDF&PPT.html" class="active">PDF & PPT</a>
-                </li>
+        <ul class="list">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/websites.html">Live Websites</a></li>
+            <li><a href="/Posters.html">Posters</a></li>
+            <li><a href="/PDF&PPT.html" class="active">PDF &amp; PPT</a></li>
+        </ul>
 
-            </ul>
+        <p class="copyright">
+            © Abhishek Nadar | All Rights Reserved
+        </p>
+    </footer>
 
-            <p class="copyright">
-                © Abhishek Nadar | All Rights Preserved
-            </p>
-
-        </footer>
-
-        <script src="/script.js"></script>
+    <script src="/script.js"></script>
 </body>
 </html>
