@@ -3735,3 +3735,520 @@ header::before,
         border-right-color: var(--main-color);
     }
 }
+
+
+/* =====================================================================
+   MY PROJECTS — LIQUID GLASS DROPDOWN
+   Desktop: hover/focus opens the menu.
+   Mobile/tablet: tap the My Projects button to expand it.
+   ===================================================================== */
+
+.nav-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-dropdown-toggle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    min-height: 40px;
+    padding: 0.8rem 1.05rem;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 1.35rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.nav-dropdown-toggle span {
+    color: inherit;
+}
+
+.nav-dropdown-toggle i {
+    color: var(--main-color);
+    font-size: 1.8rem;
+    transition: transform 0.25s ease;
+}
+
+.nav-dropdown:hover .nav-dropdown-toggle,
+.nav-dropdown:focus-within .nav-dropdown-toggle,
+.nav-dropdown.open .nav-dropdown-toggle {
+    color: #ffffff;
+    border-color: rgba(176, 38, 255, 0.26);
+    background: rgba(176, 38, 255, 0.12);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.10);
+}
+
+.nav-dropdown:hover .nav-dropdown-toggle i,
+.nav-dropdown:focus-within .nav-dropdown-toggle i,
+.nav-dropdown.open .nav-dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 1.2rem);
+    left: 50%;
+    width: 220px;
+    padding: 0.8rem;
+    display: grid;
+    gap: 0.55rem;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate(-50%, -8px) scale(0.98);
+    transform-origin: top center;
+    border: 1px solid rgba(176, 38, 255, 0.24);
+    border-radius: 16px;
+    background:
+        linear-gradient(145deg, rgba(176,38,255,0.10), rgba(255,255,255,0.025)),
+        rgba(8,8,8,0.90);
+    -webkit-backdrop-filter: blur(26px) saturate(150%);
+    backdrop-filter: blur(26px) saturate(150%);
+    box-shadow:
+        0 24px 60px rgba(0,0,0,0.42),
+        inset 0 1px 0 rgba(255,255,255,0.11);
+    transition:
+        opacity 0.22s ease,
+        visibility 0.22s ease,
+        transform 0.22s cubic-bezier(.2,.8,.2,1);
+    z-index: 1200;
+}
+
+.nav-dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: 50%;
+    width: 13px;
+    height: 13px;
+    transform: translateX(-50%) rotate(45deg);
+    border-left: 1px solid rgba(176,38,255,0.24);
+    border-top: 1px solid rgba(176,38,255,0.24);
+    background: rgba(15,8,18,0.92);
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu,
+.nav-dropdown.open .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate(-50%, 0) scale(1);
+}
+
+.navbar .nav-dropdown-menu a {
+    position: relative;
+    width: 100%;
+    min-height: 44px;
+    margin: 0;
+    padding: 0.95rem 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    border: 1px solid transparent;
+    border-radius: 11px;
+    color: rgba(255,255,255,0.76);
+    background: rgba(255,255,255,0.018);
+    font-size: 1.35rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+.navbar .nav-dropdown-menu a span {
+    color: inherit;
+}
+
+.navbar .nav-dropdown-menu a i {
+    width: 22px;
+    flex-shrink: 0;
+    color: var(--main-color);
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.navbar .nav-dropdown-menu a:hover,
+.navbar .nav-dropdown-menu a:focus-visible {
+    color: #ffffff;
+    border-color: rgba(176,38,255,0.22);
+    background: rgba(176,38,255,0.12);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.07);
+}
+
+/* Bridge the small hover gap between button and dropdown on desktop */
+.nav-dropdown::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 1.4rem;
+}
+
+/* Mobile/tablet dropdown becomes part of the vertical menu */
+@media (max-width: 900px) {
+    .nav-dropdown {
+        width: 100%;
+        display: block;
+    }
+
+    .nav-dropdown::after {
+        display: none;
+    }
+
+    .nav-dropdown-toggle {
+        width: 100%;
+        min-height: 46px;
+        justify-content: space-between;
+        padding: 1rem 1.2rem;
+        border-color: rgba(176,38,255,0.08);
+        background: rgba(176,38,255,0.035);
+        font-size: 1.4rem;
+        text-align: left;
+    }
+
+    .nav-dropdown-menu {
+        position: static;
+        width: 100%;
+        max-height: 0;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: grid;
+        gap: 0.55rem;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: none;
+        border: 0;
+        border-radius: 12px;
+        background: transparent;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        box-shadow: none;
+        transition:
+            max-height 0.28s ease,
+            opacity 0.20s ease,
+            padding 0.28s ease;
+    }
+
+    .nav-dropdown-menu::before {
+        display: none;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu {
+        /* On touch-sized layouts, click state controls expansion. */
+        max-height: 0;
+        padding: 0;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .nav-dropdown.open .nav-dropdown-menu {
+        max-height: 220px;
+        margin-top: 0.55rem;
+        padding: 0.55rem;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        background: rgba(176,38,255,0.045);
+        border: 1px solid rgba(176,38,255,0.10);
+    }
+
+    .navbar .nav-dropdown-menu a {
+        padding-left: 1.25rem;
+        background: rgba(255,255,255,0.02);
+    }
+}
+
+@media (max-width: 359px) {
+    .nav-dropdown-toggle,
+    .navbar .nav-dropdown-menu a {
+        font-size: 1.32rem;
+    }
+}
+
+
+/* =====================================================================
+   MY PROJECTS DROPDOWN — VISIBILITY FIX
+   The Liquid Glass header previously used overflow:hidden, which clipped
+   the dropdown outside the header. This override keeps the glass design
+   while allowing the project menu to render below it.
+   ===================================================================== */
+
+header,
+.header {
+    overflow: visible !important;
+}
+
+/* Native <details> reset */
+.nav-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 1300;
+}
+
+.nav-dropdown > summary {
+    list-style: none;
+}
+
+.nav-dropdown > summary::-webkit-details-marker {
+    display: none;
+}
+
+.nav-dropdown-toggle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    min-height: 40px;
+    padding: 0.8rem 1.05rem;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: transparent;
+    color: rgba(255,255,255,0.72);
+    font-size: 1.35rem;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+    transition:
+        color 0.22s ease,
+        background 0.22s ease,
+        border-color 0.22s ease,
+        box-shadow 0.22s ease;
+}
+
+.nav-dropdown-toggle span {
+    color: inherit;
+}
+
+.nav-dropdown-toggle i {
+    color: var(--main-color);
+    font-size: 1.8rem;
+    transition: transform 0.22s ease;
+}
+
+.nav-dropdown[open] .nav-dropdown-toggle,
+.nav-dropdown-toggle:hover,
+.nav-dropdown-toggle:focus-visible {
+    color: #fff;
+    border-color: rgba(176,38,255,0.30);
+    background: rgba(176,38,255,0.13);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.10),
+        0 8px 24px rgba(176,38,255,0.07);
+}
+
+.nav-dropdown[open] .nav-dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+    position: absolute !important;
+    top: calc(100% + 1rem) !important;
+    left: 50% !important;
+    width: 220px !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0.8rem !important;
+    display: grid !important;
+    gap: 0.55rem;
+    overflow: visible !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate(-50%, -7px) scale(0.98) !important;
+    border: 1px solid rgba(176,38,255,0.28) !important;
+    border-radius: 16px !important;
+    background:
+        linear-gradient(145deg, rgba(176,38,255,0.13), rgba(255,255,255,0.025)),
+        rgba(8,8,8,0.96) !important;
+    -webkit-backdrop-filter: blur(26px) saturate(150%);
+    backdrop-filter: blur(26px) saturate(150%);
+    box-shadow:
+        0 24px 62px rgba(0,0,0,0.48),
+        0 0 30px rgba(176,38,255,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.11) !important;
+    transition:
+        opacity 0.18s ease,
+        visibility 0.18s ease,
+        transform 0.18s ease;
+    z-index: 5000 !important;
+}
+
+.nav-dropdown[open] .nav-dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translate(-50%, 0) scale(1) !important;
+}
+
+.nav-dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: 50%;
+    width: 13px;
+    height: 13px;
+    transform: translateX(-50%) rotate(45deg);
+    border-left: 1px solid rgba(176,38,255,0.28);
+    border-top: 1px solid rgba(176,38,255,0.28);
+    background: rgba(20,8,24,0.97);
+}
+
+.navbar .nav-dropdown-menu a {
+    width: 100%;
+    min-height: 44px;
+    margin: 0 !important;
+    padding: 0.95rem 1.05rem !important;
+    display: flex !important;
+    align-items: center;
+    gap: 0.85rem;
+    border: 1px solid transparent !important;
+    border-radius: 11px !important;
+    color: rgba(255,255,255,0.82) !important;
+    background: rgba(255,255,255,0.022) !important;
+    font-size: 1.35rem !important;
+    font-weight: 600;
+    text-align: left;
+}
+
+.navbar .nav-dropdown-menu a i {
+    width: 22px;
+    flex: 0 0 22px;
+    color: var(--main-color);
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.navbar .nav-dropdown-menu a span {
+    color: inherit;
+}
+
+.navbar .nav-dropdown-menu a:hover,
+.navbar .nav-dropdown-menu a:focus-visible {
+    color: #fff !important;
+    border-color: rgba(176,38,255,0.24) !important;
+    background: rgba(176,38,255,0.14) !important;
+}
+
+/* Prevent the old hover bridge rules from interfering */
+.nav-dropdown::after {
+    display: none !important;
+}
+
+/* Switch to the mobile menu earlier so all nav items fit comfortably. */
+@media (max-width: 1100px) {
+    #menu-icon {
+        display: flex !important;
+    }
+
+    .navbar {
+        position: absolute !important;
+        top: calc(100% + 10px) !important;
+        left: 0 !important;
+        width: 100% !important;
+        max-height: calc(100dvh - 92px);
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        display: none !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.5rem !important;
+        padding: 1.1rem !important;
+        border: 1px solid rgba(176,38,255,0.24) !important;
+        border-radius: 16px !important;
+        background:
+            linear-gradient(145deg, rgba(176,38,255,0.11), rgba(255,255,255,0.025)),
+            rgba(8,8,8,0.96) !important;
+        -webkit-backdrop-filter: blur(26px) saturate(150%);
+        backdrop-filter: blur(26px) saturate(150%);
+        box-shadow: 0 26px 70px rgba(0,0,0,0.44) !important;
+        z-index: 4000 !important;
+    }
+
+    .navbar.active {
+        display: flex !important;
+    }
+
+    .navbar > a,
+    .nav-dropdown-toggle {
+        width: 100%;
+        min-height: 46px;
+        justify-content: flex-start;
+        margin: 0 !important;
+        padding: 1rem 1.2rem !important;
+        font-size: 1.4rem !important;
+        text-align: left;
+    }
+
+    .nav-dropdown {
+        width: 100%;
+        display: block;
+    }
+
+    .nav-dropdown-toggle {
+        justify-content: space-between;
+        border-color: rgba(176,38,255,0.08);
+        background: rgba(176,38,255,0.035);
+    }
+
+    .nav-dropdown-menu {
+        position: static !important;
+        left: auto !important;
+        top: auto !important;
+        width: 100% !important;
+        max-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        transform: none !important;
+        border: 0 !important;
+        border-radius: 12px !important;
+        background: transparent !important;
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
+        box-shadow: none !important;
+        transition:
+            max-height 0.24s ease,
+            opacity 0.18s ease,
+            padding 0.24s ease !important;
+    }
+
+    .nav-dropdown-menu::before {
+        display: none;
+    }
+
+    .nav-dropdown[open] .nav-dropdown-menu {
+        max-height: 230px !important;
+        margin-top: 0.5rem !important;
+        padding: 0.55rem !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        background: rgba(176,38,255,0.045) !important;
+        border: 1px solid rgba(176,38,255,0.11) !important;
+    }
+
+    .navbar .nav-dropdown-menu a {
+        padding-left: 1.25rem !important;
+    }
+}
