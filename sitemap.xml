@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://abhi-49.github.io/</loc>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://abhi-49.github.io/websites.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://abhi-49.github.io/Posters.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://abhi-49.github.io/PDF%26PPT.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+</urlset>
