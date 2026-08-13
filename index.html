@@ -93,13 +93,16 @@
                 <a href="#experiences">Experiences</a>
                 <a href="#performance">Performance</a>
                 <a href="#skills">Skills</a>
-                <details class="nav-dropdown">
-                    <summary class="nav-dropdown-toggle">
+                <div class="projects-menu-v2">
+                    <button class="projects-menu-v2__toggle"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="projects-menu-v2-panel">
                         <span>My Projects</span>
                         <i class='bx bx-chevron-down' aria-hidden="true"></i>
-                    </summary>
+                    </button>
 
-                    <div class="nav-dropdown-menu">
+                    <div class="projects-menu-v2__panel" id="projects-menu-v2-panel">
                         <a href="/websites.html">
                             <i class='bx bx-globe' aria-hidden="true"></i>
                             <span>Websites</span>
@@ -113,7 +116,7 @@
                             <span>PDF &amp; PPT</span>
                         </a>
                     </div>
-                </details>
+                </div>
                 <a href="#contact">Contact</a>
             </nav>
         </header>
@@ -873,80 +876,106 @@
             });
         </script>
 
-    <!-- Self-contained responsive navigation -->
+    <!-- Self-contained responsive navigation + My Projects submenu -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const menuIcon = document.getElementById("menu-icon");
             const navbar = document.querySelector(".navbar");
+            const projectMenu = document.querySelector(".projects-menu-v2");
+            const projectToggle = document.querySelector(".projects-menu-v2__toggle");
 
-            if (!menuIcon || !navbar) return;
-
-            menuIcon.setAttribute("role", "button");
-            menuIcon.setAttribute("tabindex", "0");
-            menuIcon.setAttribute("aria-expanded", "false");
-            menuIcon.setAttribute("aria-label", "Open navigation menu");
-
-            function setMenu(open) {
-                navbar.classList.toggle("active", open);
-                menuIcon.classList.toggle("bx-x", open);
-                menuIcon.classList.toggle("bx-menu", !open);
-                menuIcon.setAttribute("aria-expanded", open ? "true" : "false");
-                menuIcon.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
-
-                if (!open) {
-                    const projectDropdown = navbar.querySelector(".nav-dropdown");
-                    if (projectDropdown && projectDropdown.hasAttribute("open")) {
-                        projectDropdown.removeAttribute("open");
-                    }
-                }
+            function setProjectMenu(open) {
+                if (!projectMenu || !projectToggle) return;
+                projectMenu.classList.toggle("is-open", open);
+                projectToggle.setAttribute("aria-expanded", open ? "true" : "false");
             }
 
-            function toggleMenu(event) {
-                if (event) {
+            if (projectToggle) {
+                projectToggle.addEventListener("click", function (event) {
                     event.preventDefault();
                     event.stopPropagation();
-                }
-                setMenu(!navbar.classList.contains("active"));
+                    setProjectMenu(!projectMenu.classList.contains("is-open"));
+                });
             }
 
-            menuIcon.addEventListener("click", toggleMenu);
+            if (menuIcon && navbar) {
+                menuIcon.setAttribute("role", "button");
+                menuIcon.setAttribute("tabindex", "0");
+                menuIcon.setAttribute("aria-expanded", "false");
+                menuIcon.setAttribute("aria-label", "Open navigation menu");
 
-            menuIcon.addEventListener("keydown", function (event) {
-                if (event.key === "Enter" || event.key === " ") {
-                    toggleMenu(event);
+                function setMainMenu(open) {
+                    navbar.classList.toggle("active", open);
+                    menuIcon.classList.toggle("bx-x", open);
+                    menuIcon.classList.toggle("bx-menu", !open);
+                    menuIcon.setAttribute("aria-expanded", open ? "true" : "false");
+                    menuIcon.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+
+                    if (!open) {
+                        setProjectMenu(false);
+                    }
                 }
-            });
 
-            navbar.querySelectorAll("a").forEach(function (link) {
-                link.addEventListener("click", function () {
-                    if (window.innerWidth <= 1100) {
-                        setMenu(false);
+                function toggleMainMenu(event) {
+                    if (event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    setMainMenu(!navbar.classList.contains("active"));
+                }
+
+                menuIcon.addEventListener("click", toggleMainMenu);
+
+                menuIcon.addEventListener("keydown", function (event) {
+                    if (event.key === "Enter" || event.key === " ") {
+                        toggleMainMenu(event);
                     }
                 });
-            });
 
-            document.addEventListener("click", function (event) {
-                if (
-                    window.innerWidth <= 1100 &&
-                    navbar.classList.contains("active") &&
-                    !navbar.contains(event.target) &&
-                    event.target !== menuIcon
-                ) {
-                    setMenu(false);
-                }
-            });
+                navbar.querySelectorAll("a").forEach(function (link) {
+                    link.addEventListener("click", function () {
+                        if (window.innerWidth <= 1100) {
+                            setMainMenu(false);
+                        } else {
+                            setProjectMenu(false);
+                        }
+                    });
+                });
 
-            document.addEventListener("keydown", function (event) {
-                if (event.key === "Escape") {
-                    setMenu(false);
-                }
-            });
+                document.addEventListener("click", function (event) {
+                    if (projectMenu && !projectMenu.contains(event.target)) {
+                        setProjectMenu(false);
+                    }
 
-            window.addEventListener("resize", function () {
-                if (window.innerWidth > 1100) {
-                    setMenu(false);
-                }
-            });
+                    if (
+                        window.innerWidth <= 1100 &&
+                        navbar.classList.contains("active") &&
+                        !navbar.contains(event.target) &&
+                        event.target !== menuIcon
+                    ) {
+                        setMainMenu(false);
+                    }
+                });
+
+                document.addEventListener("keydown", function (event) {
+                    if (event.key === "Escape") {
+                        setProjectMenu(false);
+                        if (window.innerWidth <= 1100) {
+                            setMainMenu(false);
+                        }
+                    }
+                });
+
+                window.addEventListener("resize", function () {
+                    if (window.innerWidth > 1100) {
+                        navbar.classList.remove("active");
+                        menuIcon.classList.remove("bx-x");
+                        menuIcon.classList.add("bx-menu");
+                        menuIcon.setAttribute("aria-expanded", "false");
+                    }
+                    setProjectMenu(false);
+                });
+            }
         });
     </script>
 
