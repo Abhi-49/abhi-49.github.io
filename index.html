@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
         <!-- SEO-Optimized Meta Title and Description -->
         <title>Digital Marketing Manager | SEO, Google Ads & Lead Generation Expert – Abhishek Nadar</title>
         <meta name="description" content="Digital Marketing Manager with 3+ years of experience in SEO, Google Ads, social media marketing, and lead generation. Expert in WordPress, analytics, and ROI-driven campaigns — helping brands grow through data-driven digital strategies.">
@@ -28,6 +28,7 @@
                 <a href="#education">Education</a>
                 <a href="#services">Services</a>
                 <a href="#experiences">Experiences</a>
+                <a href="#performance">Performance</a>
                 <a href="#skills">Skills</a>
                 <a href="#myprojects">My Projects</a>
                 <a href="#contact">Contact</a>
@@ -219,6 +220,91 @@
 
             </div>
 
+        </section>
+
+
+        <!-- Performance & ROI Section -->
+        <section class="performance" id="performance">
+            <div class="performance-inner">
+                <div class="performance-heading">
+                    <span class="performance-eyebrow">MEASURABLE DIGITAL MARKETING RESULTS</span>
+                    <h2 class="heading">Performance <span>& ROI</span></h2>
+                    <p>
+                        A 12-month view of campaign performance from May 2025 to April 2026.
+                        Revenue values are intentionally not displayed; results are presented through ROI percentages
+                        and enquiry growth across Crossroads Dental Clinic's Deira and Sheikh Zayed Road branches.
+                    </p>
+                </div>
+
+                <div class="performance-stats">
+                    <article class="performance-stat">
+                        <span class="stat-label">Overall Net ROI</span>
+                        <strong>459%</strong>
+                        <small>12-month marketing ROI</small>
+                    </article>
+
+                    <article class="performance-stat">
+                        <span class="stat-label">Total Enquiries</span>
+                        <strong>2,181</strong>
+                        <small>May 2025 – April 2026</small>
+                    </article>
+
+                    <article class="performance-stat">
+                        <span class="stat-label">Crossroads Deira</span>
+                        <strong>1,027</strong>
+                        <small>Enquiries generated</small>
+                    </article>
+
+                    <article class="performance-stat">
+                        <span class="stat-label">Crossroads SZR</span>
+                        <strong>1,154</strong>
+                        <small>Enquiries generated</small>
+                    </article>
+                </div>
+
+                <div class="performance-charts">
+                    <article class="chart-card">
+                        <div class="chart-card-heading">
+                            <div>
+                                <span class="chart-kicker">ROI TREND</span>
+                                <h3>Monthly Net Marketing ROI</h3>
+                            </div>
+                            <span class="chart-badge">ROI %</span>
+                        </div>
+                        <div class="chart-wrap">
+                            <canvas id="roiChart" aria-label="Monthly net marketing ROI percentage from May 2025 to April 2026" role="img"></canvas>
+                        </div>
+                        <p class="chart-note">
+                            ROI is shown only as a percentage. Revenue generated is not displayed.
+                        </p>
+                    </article>
+
+                    <article class="chart-card">
+                        <div class="chart-card-heading">
+                            <div>
+                                <span class="chart-kicker">LEAD GENERATION</span>
+                                <h3>Monthly Enquiries by Branch</h3>
+                            </div>
+                            <span class="chart-badge">2,181 Total</span>
+                        </div>
+                        <div class="chart-wrap">
+                            <canvas id="enquiryChart" aria-label="Monthly enquiries for Crossroads Deira and Crossroads Sheikh Zayed Road from May 2025 to April 2026" role="img"></canvas>
+                        </div>
+                        <div class="chart-legend-copy">
+                            <span><i class="legend-dot deira-dot"></i> Crossroads Deira</span>
+                            <span><i class="legend-dot szr-dot"></i> Crossroads Sheikh Zayed Road</span>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="performance-summary">
+                    <i class='bx bx-line-chart'></i>
+                    <p>
+                        The data demonstrates sustained lead generation across two Dubai clinic locations,
+                        with strong ROI performance across the 12-month period.
+                    </p>
+                </div>
+            </div>
         </section>
 
         <section class="skills" id="skills">
@@ -420,6 +506,207 @@
             </p>
 
         </footer>
+
+
+        <!-- Chart.js for Performance & ROI graphs -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                if (typeof Chart === "undefined") return;
+
+                const months = [
+                    "May 25", "Jun 25", "Jul 25", "Aug 25",
+                    "Sep 25", "Oct 25", "Nov 25", "Dec 25",
+                    "Jan 26", "Feb 26", "Mar 26", "Apr 26"
+                ];
+
+                // Net ROI (%) = (return after marketing expenses / marketing expenses) × 100.
+                // Revenue values are intentionally not included in this public-facing chart.
+                const roiPercentages = [
+                    192.3, 712.6, 226.2, 924.8,
+                    98.5, 378.1, 367.0, 329.3,
+                    665.5, 852.9, 232.0, 794.7
+                ];
+
+                const deiraEnquiries = [
+                    107, 115, 101, 96, 92, 79,
+                    57, 64, 84, 65, 84, 83
+                ];
+
+                const szrEnquiries = [
+                    91, 93, 116, 108, 76, 91,
+                    113, 108, 87, 95, 94, 82
+                ];
+
+                const commonGrid = "rgba(255, 255, 255, 0.08)";
+                const commonTick = "rgba(255, 255, 255, 0.72)";
+
+                const roiCanvas = document.getElementById("roiChart");
+                if (roiCanvas) {
+                    const roiCtx = roiCanvas.getContext("2d");
+                    const roiGradient = roiCtx.createLinearGradient(0, 0, 0, 320);
+                    roiGradient.addColorStop(0, "rgba(176, 38, 255, 0.32)");
+                    roiGradient.addColorStop(1, "rgba(176, 38, 255, 0.02)");
+
+                    new Chart(roiCtx, {
+                        type: "line",
+                        data: {
+                            labels: months,
+                            datasets: [{
+                                label: "Net ROI",
+                                data: roiPercentages,
+                                borderColor: "#B026FF",
+                                backgroundColor: roiGradient,
+                                borderWidth: 3,
+                                fill: true,
+                                tension: 0.38,
+                                pointRadius: 4,
+                                pointHoverRadius: 7,
+                                pointBackgroundColor: "#B026FF",
+                                pointBorderColor: "#ffffff",
+                                pointBorderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            interaction: {
+                                intersect: false,
+                                mode: "index"
+                            },
+                            plugins: {
+                                legend: {
+                                    display: false
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            return " Net ROI: " + context.parsed.y.toFixed(1) + "%";
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {
+                                x: {
+                                    grid: {
+                                        display: false
+                                    },
+                                    ticks: {
+                                        color: commonTick,
+                                        maxRotation: 0,
+                                        autoSkip: true
+                                    }
+                                },
+                                y: {
+                                    beginAtZero: true,
+                                    grid: {
+                                        color: commonGrid
+                                    },
+                                    ticks: {
+                                        color: commonTick,
+                                        callback: function(value) {
+                                            return value + "%";
+                                        }
+                                    },
+                                    title: {
+                                        display: true,
+                                        text: "Net ROI (%)",
+                                        color: commonTick
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+
+                const enquiryCanvas = document.getElementById("enquiryChart");
+                if (enquiryCanvas) {
+                    const enquiryCtx = enquiryCanvas.getContext("2d");
+
+                    new Chart(enquiryCtx, {
+                        type: "line",
+                        data: {
+                            labels: months,
+                            datasets: [
+                                {
+                                    label: "Crossroads Deira",
+                                    data: deiraEnquiries,
+                                    borderColor: "#B026FF",
+                                    backgroundColor: "#B026FF",
+                                    borderWidth: 3,
+                                    tension: 0.38,
+                                    pointRadius: 4,
+                                    pointHoverRadius: 7,
+                                    pointBackgroundColor: "#B026FF",
+                                    pointBorderColor: "#ffffff",
+                                    pointBorderWidth: 2
+                                },
+                                {
+                                    label: "Crossroads Sheikh Zayed Road",
+                                    data: szrEnquiries,
+                                    borderColor: "#22d3ee",
+                                    backgroundColor: "#22d3ee",
+                                    borderWidth: 3,
+                                    tension: 0.38,
+                                    pointRadius: 4,
+                                    pointHoverRadius: 7,
+                                    pointBackgroundColor: "#22d3ee",
+                                    pointBorderColor: "#ffffff",
+                                    pointBorderWidth: 2
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            interaction: {
+                                intersect: false,
+                                mode: "index"
+                            },
+                            plugins: {
+                                legend: {
+                                    display: false
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            return " " + context.dataset.label + ": " + context.parsed.y + " enquiries";
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {
+                                x: {
+                                    grid: {
+                                        display: false
+                                    },
+                                    ticks: {
+                                        color: commonTick,
+                                        maxRotation: 0,
+                                        autoSkip: true
+                                    }
+                                },
+                                y: {
+                                    beginAtZero: true,
+                                    grid: {
+                                        color: commonGrid
+                                    },
+                                    ticks: {
+                                        color: commonTick,
+                                        precision: 0
+                                    },
+                                    title: {
+                                        display: true,
+                                        text: "Enquiries",
+                                        color: commonTick
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+            });
+        </script>
 
         <script src="/script.js"></script>
     </body>
