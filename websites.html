@@ -2,300 +2,751 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- SEO -->
+    <title>Web Design Portfolio Dubai | Live Website Projects | Abhishek Nadar</title>
+    <meta name="description" content="Explore live website projects by Abhishek Nadar, a Dubai-based Digital Marketing Manager with experience in WordPress, responsive web design, landing pages, SEO and conversion-focused websites.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="author" content="Abhishek Nadar">
+    <meta name="theme-color" content="#080808">
+
+    <!-- Social sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_AE">
+    <meta property="og:title" content="Live Website Projects | Abhishek Nadar">
+    <meta property="og:description" content="A portfolio of live website and landing page projects covering responsive web design, WordPress and conversion-focused digital experiences.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Live Website Projects | Abhishek Nadar">
+    <meta name="twitter:description" content="Explore live website projects by Dubai-based Digital Marketing Manager Abhishek Nadar.">
+
+    <!-- Performance -->
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/Abhi-Favicon.svg">
-    <link rel="shortcut svg+xml" href="/Abhi-Favicon.svg">
-    <title>Live Website Designs</title>
+    <link rel="shortcut icon" href="/Abhi-Favicon.svg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Live Website Projects",
+      "description": "A collection of live website and landing page projects by Abhishek Nadar.",
+      "about": {
+        "@type": "Person",
+        "name": "Abhishek Nadar",
+        "jobTitle": "Digital Marketing Manager",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Dubai",
+          "addressCountry": "AE"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/abhishek-nadar/",
+          "https://www.instagram.com/___heavenly_demon___/"
+        ]
+      }
+    }
+    </script>
+
     <style>
-        
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    scroll-behavior: smooth;
-    font-family: "Poppins", sans-serif;
-}
-:root {
-    --bg-color: #080808;
-    --second-bg-color: #131313;
-    --text-color: white;
-    --main-color: #B026FF;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            scroll-behavior: smooth;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Helvetica, Arial, sans-serif;
+        }
 
-html{
-    font-size: 60%;
-    overflow-x: hidden;
-}
-body{
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
+        :root {
+            --bg-color: #080808;
+            --second-bg-color: #131313;
+            --text-color: #ffffff;
+            --muted-color: rgba(255,255,255,0.68);
+            --main-color: #B026FF;
+            --main-soft: rgba(176, 38, 255, 0.12);
+            --glass-border: rgba(176, 38, 255, 0.24);
+            --glass-border-soft: rgba(176, 38, 255, 0.14);
+            --glass-highlight: rgba(255,255,255,0.18);
+            --shadow: 0 22px 60px rgba(0,0,0,0.32);
+        }
 
-h2 {
-    font-size: 4rem;
-    margin: 2rem 0;
-}
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 100px;
+        }
 
-section {
-    min-height: 100vh;
-    padding: 10rem 12% 10rem;
-}
-.website{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15rem;
-}
-.website-content{
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    text-align: center;
-    justify-content: center;
-    margin-top: 3rem;
-}
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: clip;
+            color: var(--text-color);
+            background:
+                radial-gradient(circle at 12% 8%, rgba(176,38,255,0.18), transparent 28%),
+                radial-gradient(circle at 88% 26%, rgba(176,38,255,0.10), transparent 30%),
+                radial-gradient(circle at 55% 92%, rgba(176,38,255,0.06), transparent 30%),
+                linear-gradient(180deg, #080808 0%, #0b090d 50%, #080808 100%);
+        }
 
-span{
-    color: var(--main-color);
-}
-.logo span{
-    color: var(--main-color);
-}
+        body::before {
+            content: "";
+            position: fixed;
+            inset: -15%;
+            z-index: -2;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 22% 28%, rgba(176,38,255,0.14), transparent 23%),
+                radial-gradient(circle at 76% 22%, rgba(176,38,255,0.08), transparent 24%),
+                radial-gradient(circle at 66% 76%, rgba(176,38,255,0.06), transparent 23%);
+            filter: blur(20px) saturate(120%);
+            animation: ambientDrift 18s ease-in-out infinite alternate;
+        }
 
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
+        @keyframes ambientDrift {
+            from { transform: translate3d(-1%, -1%, 0) scale(1); }
+            to { transform: translate3d(1.5%, 1%, 0) scale(1.02); }
+        }
 
-.card {
-    background-color: var(--second-bg-color);
-    border-radius: 10px;
-    overflow: hidden;
-    width: 350px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: 0.4s ease-in-out;
-    cursor: pointer;
-    flex-direction: column;
-    border: 3px solid rgba(238, 238, 238, 0.2);
-    border-radius: 2rem;
-    gap: 1.5rem;
-    color: white;
-}
+        img,
+        svg {
+            max-width: 100%;
+        }
 
-.card img {
-    width: 300px;
-    height: 200px;
-    border-radius: 10px;
-}
+        h1,
+        h2,
+        h3 {
+            color: #fff;
+        }
 
-.card h3 {
-    padding: 10px;
-    font-size: 18px;
-    font-weight: 500;
-}
+        span {
+            color: var(--main-color);
+        }
 
-.card:hover{
-    border: 3px solid var(--main-color);
-    transform: translateY(-10px)scale(1.03);
-    box-shadow: 0 0 50px var(--main-color);
-}
+        section {
+            min-height: 100vh;
+            padding: 13rem max(6%, calc((100vw - 1180px) / 2)) 9rem;
+            scroll-margin-top: 100px;
+        }
 
-.live-demo-btn {
-    background-color: var(--main-color);
-    color: white;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    transition: background-color 0.3s;
-}
+        /* ============================
+           APPLE-INSPIRED LIQUID GLASS HEADER
+           ============================ */
 
-.live-demo-btn:hover {
-    background-color: #8e1ccc;
-}
+        header,
+        .header {
+            position: fixed;
+            top: max(14px, env(safe-area-inset-top));
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(1180px, calc(100% - 28px));
+            padding: 1.35rem 1.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            border-radius: 18px;
+            background:
+                linear-gradient(135deg, rgba(176,38,255,0.09), rgba(255,255,255,0.03)),
+                rgba(8,8,8,0.74);
+            -webkit-backdrop-filter: blur(26px) saturate(150%);
+            backdrop-filter: blur(26px) saturate(150%);
+            box-shadow:
+                0 18px 52px rgba(0,0,0,0.34),
+                inset 0 1px 0 rgba(255,255,255,0.15);
+        }
 
-header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 4rem 12% 4rem;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 5;
-}
-.logo{
-    font-size: 3rem;
-    color: var(--text-color);
-    font-weight: 800;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-.logo:hover{
-    transform: scale(1.1);
-}
-.logo span{
-    text-shadow: 0 0 25px var(--main-color);
-}
-.navbar a{
-    font-size: 1.8rem;
-    color: var(--text-color);
-    margin-left: 4rem;
-    font-weight: 500;
-    transition: 0.3s ease;
-    border-bottom: 3px solid transparent;
-}
-.navbar a:hover,
-.navbar a.active{
-    color: var(--main-color);
-    border-bottom: 3px solid var(--main-color);
-}
-#menu-icon {
-    font-size: 3.6rem;
-    color: var(--main-color);
-    display: none;
-}
+        header::before,
+        .header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            border-radius: inherit;
+            background:
+                linear-gradient(
+                    110deg,
+                    rgba(255,255,255,0.13),
+                    rgba(176,38,255,0.045) 28%,
+                    transparent 56%,
+                    rgba(176,38,255,0.07)
+                );
+        }
 
-.footer{
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    padding: 40px 0;
-    background-color: var(--second-bg-color);
-}
-.footer .social{
-    text-align: center;
-    padding-bottom: 25px;
-    color: var(--main-color);
-}
-.footer .social a{
-    font-size: 25px;
-    color: var(--main-color);
-    border: 2px solid var(--main-color);
-    width: 42px;
-    height: 42px;
-    line-height: 42px;
-    display: inline-block;
-    text-align: center;
-    border-radius: 50%;
-    margin: 0 10px;
-    transition: 0.3s ease-in-out;
-}
-.footer .social a:hover{
-    transform: scale(1.2)translateY(-10px);
-    background-color: var(--main-color);
-    color: black;
-    box-shadow: 0 0 25px var(--main-color);
-}
-.footer ul{
-    margin-top: 0;
-    padding: 0;
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 0;
-    text-align: center;
-}
-.footer ul li a{
-    color: white;
-    border-bottom: 3px solid transparent;
-    transition: 0.3s ease-in-out;
-}
-.footer ul li a:hover{
-    border-bottom: 3px solid var(--main-color);
-}
-.footer ul li{
-    display: inline-block;
-    padding: 0 15px;
-}
-.footer .copyright{
-    margin-top: 50px;
-    text-align: center;
-    font-size: 16px;
-    color: white;
-}
-@media(max-width:768px){
-    #menu-icon{
-        display: block;
-    }
-    .navbar {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(20px);
-        border-bottom-left-radius: 2rem;
-        border-bottom-right-radius: 2rem;
-        border-left: 2px solid var(--main-color);
-        border-bottom: 2px solid var(--main-color);
-        border-right: 2px solid var(--main-color);
-        flex-direction: column;
-        display: none;
-        text-align: center;
-        padding: 2rem 0;
-    }
-    .navbar a {
-        margin: 1rem 0;
-        font-size: 2rem;
-    }
-    .navbar.active {
-        display: flex;
-    }
-}
-@media(max-width:480px){
-    #menu-icon{
-        display: block;
-    }
-    .navbar {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(20px);
-        border-bottom-left-radius: 2rem;
-        border-bottom-right-radius: 2rem;
-        border-left: 2px solid var(--main-color);
-        border-bottom: 2px solid var(--main-color);
-        border-right: 2px solid var(--main-color);
-        flex-direction: column;
-        display: none;
-        text-align: center;
-        padding: 2rem 0;
-    }
-    .navbar a {
-        margin: 1rem 0;
-        font-size: 2rem;
-    }
-    .navbar.active {
-        display: flex;
-    }
-    
-}
+        header::after,
+        .header::after {
+            content: "";
+            position: absolute;
+            left: 10%;
+            right: 10%;
+            top: 0;
+            height: 1px;
+            pointer-events: none;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.48), transparent);
+        }
 
+        .logo,
+        .navbar,
+        #menu-icon {
+            position: relative;
+            z-index: 2;
+        }
 
+        .logo {
+            font-size: 2.6rem;
+            color: var(--text-color);
+            font-weight: 800;
+            letter-spacing: -0.07rem;
+            transition: 0.25s ease;
+        }
+
+        .logo:hover {
+            transform: translateY(-1px);
+        }
+
+        .logo span {
+            color: var(--main-color);
+            text-shadow: 0 0 24px rgba(176,38,255,0.32);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .navbar a {
+            font-size: 1.45rem;
+            color: rgba(255,255,255,0.72);
+            font-weight: 600;
+            padding: 0.9rem 1.2rem;
+            border-radius: 11px;
+            border: 1px solid transparent;
+            transition: 0.25s ease;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #fff;
+            border-color: rgba(176,38,255,0.26);
+            background: rgba(176,38,255,0.12);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.10);
+        }
+
+        #menu-icon {
+            min-width: 44px;
+            min-height: 44px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.3rem;
+            color: var(--main-color);
+            cursor: pointer;
+        }
+
+        /* ============================
+           PROJECT CONTENT
+           ============================ */
+
+        .website {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .website-content {
+            width: 100%;
+            max-width: 1180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .section-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            margin-bottom: 1.3rem;
+            color: var(--main-color);
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 0.16rem;
+            text-transform: uppercase;
+        }
+
+        .website-content h1 {
+            max-width: 900px;
+            margin: 0;
+            font-size: clamp(5rem, 8vw, 8rem);
+            line-height: 1.02;
+            letter-spacing: -0.3rem;
+        }
+
+        .website-content h1 span {
+            color: var(--main-color);
+        }
+
+        .website-intro {
+            max-width: 820px;
+            margin: 2rem auto 5rem;
+            color: var(--muted-color);
+            font-size: 1.6rem;
+            line-height: 1.8;
+        }
+
+        .card-container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .card {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            min-width: 0;
+            padding: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--glass-border-soft);
+            border-radius: 24px;
+            color: white;
+            text-align: left;
+            background:
+                linear-gradient(145deg, rgba(176,38,255,0.055), rgba(255,255,255,0.018)),
+                rgba(8,8,8,0.78);
+            box-shadow:
+                0 18px 44px rgba(0,0,0,0.28),
+                inset 0 1px 0 rgba(255,255,255,0.05);
+            transition:
+                transform 0.28s cubic-bezier(.2,.8,.2,1),
+                border-color 0.28s ease,
+                box-shadow 0.28s ease;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(255,255,255,0.06),
+                    transparent 30%,
+                    transparent 72%,
+                    rgba(176,38,255,0.035)
+                );
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(176,38,255,0.40);
+            box-shadow:
+                0 25px 58px rgba(0,0,0,0.35),
+                0 0 28px rgba(176,38,255,0.07),
+                inset 0 1px 0 rgba(255,255,255,0.08);
+        }
+
+        .card-media {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16 / 10;
+            border-radius: 17px;
+            background: rgba(255,255,255,0.025);
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            border-radius: inherit;
+            transition: transform 0.45s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.035);
+        }
+
+        .card-body {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            padding: 1.8rem 0.7rem 0.5rem;
+        }
+
+        .project-type {
+            margin-bottom: 0.6rem;
+            color: var(--main-color);
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+        }
+
+        .card h2 {
+            min-height: 5.2rem;
+            margin: 0 0 1.5rem;
+            padding: 0;
+            font-size: 2rem;
+            line-height: 1.3;
+            font-weight: 700;
+            letter-spacing: -0.04rem;
+        }
+
+        .live-demo-btn {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            min-height: 46px;
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            padding: 1.15rem 1.6rem;
+            border: 1px solid rgba(176,38,255,0.38);
+            border-radius: 13px;
+            color: #fff;
+            font-size: 1.35rem;
+            font-weight: 700;
+            background:
+                linear-gradient(135deg, rgba(255,255,255,0.11), rgba(255,255,255,0.03)),
+                linear-gradient(135deg, rgba(176,38,255,0.64), rgba(119,27,180,0.50));
+            -webkit-backdrop-filter: blur(18px) saturate(150%);
+            backdrop-filter: blur(18px) saturate(150%);
+            box-shadow:
+                0 12px 28px rgba(0,0,0,0.22),
+                inset 0 1px 0 rgba(255,255,255,0.19);
+            transition: 0.25s ease;
+        }
+
+        .live-demo-btn::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 24% 0%, rgba(255,255,255,0.24), transparent 34%);
+        }
+
+        .live-demo-btn span,
+        .live-demo-btn i {
+            position: relative;
+            z-index: 1;
+            color: #fff;
+        }
+
+        .live-demo-btn:hover {
+            transform: translateY(-2px);
+            border-color: rgba(176,38,255,0.58);
+            box-shadow:
+                0 18px 38px rgba(0,0,0,0.28),
+                0 0 24px rgba(176,38,255,0.10),
+                inset 0 1px 0 rgba(255,255,255,0.23);
+        }
+
+        /* ============================
+           FOOTER
+           ============================ */
+
+        .footer {
+            position: relative;
+            width: 100%;
+            padding: 5rem max(5%, env(safe-area-inset-left)) max(3.5rem, env(safe-area-inset-bottom));
+            border-top: 1px solid rgba(176,38,255,0.12);
+            background:
+                linear-gradient(180deg, rgba(176,38,255,0.02), transparent),
+                #0a0a0d;
+        }
+
+        .footer .social {
+            padding-bottom: 2.2rem;
+            text-align: center;
+        }
+
+        .footer .social a {
+            width: 42px;
+            height: 42px;
+            margin: 0 0.55rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(176,38,255,0.30);
+            border-radius: 50%;
+            color: #fff;
+            font-size: 2.1rem;
+            background:
+                linear-gradient(135deg, rgba(255,255,255,0.08), rgba(176,38,255,0.06)),
+                rgba(176,38,255,0.11);
+            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.14);
+            transition: 0.25s ease;
+        }
+
+        .footer .social a:hover {
+            transform: translateY(-4px);
+            background: rgba(176,38,255,0.18);
+            border-color: rgba(176,38,255,0.48);
+            box-shadow: 0 14px 28px rgba(176,38,255,0.09);
+        }
+
+        .footer ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.4rem 0;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        .footer ul li {
+            padding: 0 1.2rem;
+        }
+
+        .footer ul li a {
+            color: rgba(255,255,255,0.62);
+            font-size: 1.4rem;
+            transition: 0.25s ease;
+        }
+
+        .footer ul li a:hover,
+        .footer ul li a.active {
+            color: var(--main-color);
+        }
+
+        .footer .copyright {
+            margin-top: 2.6rem;
+            color: rgba(255,255,255,0.42);
+            font-size: 1.25rem;
+            text-align: center;
+        }
+
+        /* ============================
+           RESPONSIVE
+           ============================ */
+
+        @media (max-width: 1024px) {
+            .card-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            html {
+                font-size: 60%;
+            }
+
+            header,
+            .header {
+                top: max(10px, env(safe-area-inset-top));
+                width: calc(100% - 22px);
+                padding: 1.15rem 1.4rem;
+            }
+
+            #menu-icon {
+                display: flex;
+            }
+
+            .navbar {
+                position: absolute;
+                top: calc(100% + 10px);
+                left: 0;
+                width: 100%;
+                max-height: calc(100dvh - 90px);
+                overflow-y: auto;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.7rem;
+                padding: 1.2rem;
+                border: 1px solid rgba(176,38,255,0.22);
+                border-radius: 16px;
+                background:
+                    linear-gradient(145deg, rgba(176,38,255,0.10), rgba(255,255,255,0.02)),
+                    rgba(8,8,8,0.94);
+                -webkit-backdrop-filter: blur(26px) saturate(150%);
+                backdrop-filter: blur(26px) saturate(150%);
+                box-shadow: 0 25px 65px rgba(0,0,0,0.42);
+            }
+
+            .navbar.active {
+                display: flex;
+            }
+
+            .navbar a {
+                min-height: 46px;
+                display: flex;
+                align-items: center;
+                margin: 0;
+                padding: 1rem 1.2rem;
+                font-size: 1.45rem;
+            }
+
+            section {
+                padding:
+                    12rem max(18px, env(safe-area-inset-left))
+                    7rem max(18px, env(safe-area-inset-right));
+            }
+
+            .website-content h1 {
+                font-size: clamp(4.6rem, 12vw, 6.2rem);
+                letter-spacing: -0.18rem;
+            }
+
+            .website-intro {
+                margin-bottom: 4rem;
+                font-size: 1.48rem;
+            }
+
+            .card-container {
+                grid-template-columns: 1fr;
+                max-width: 620px;
+            }
+
+            .card h2 {
+                min-height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 58%;
+            }
+
+            .logo {
+                font-size: 2.25rem;
+            }
+
+            section {
+                padding-left: max(16px, env(safe-area-inset-left));
+                padding-right: max(16px, env(safe-area-inset-right));
+            }
+
+            .website-content {
+                text-align: left;
+                align-items: stretch;
+            }
+
+            .section-eyebrow {
+                align-self: flex-start;
+            }
+
+            .website-content h1 {
+                font-size: clamp(4.2rem, 14vw, 5.6rem);
+                line-height: 1.04;
+            }
+
+            .website-intro {
+                margin: 1.8rem 0 3.4rem;
+            }
+
+            .card {
+                padding: 1.1rem;
+                border-radius: 20px;
+            }
+
+            .card-media {
+                border-radius: 15px;
+            }
+
+            .card-body {
+                padding: 1.5rem 0.5rem 0.4rem;
+            }
+
+            .card h2 {
+                font-size: 1.9rem;
+            }
+
+            .footer {
+                padding-left: max(16px, env(safe-area-inset-left));
+                padding-right: max(16px, env(safe-area-inset-right));
+            }
+
+            .footer ul li {
+                padding: 0 0.7rem;
+            }
+        }
+
+        @media (max-width: 359px) {
+            html {
+                font-size: 56%;
+            }
+
+            header,
+            .header {
+                width: calc(100% - 14px);
+            }
+
+            section {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            .website-content h1 {
+                font-size: 4.1rem;
+                letter-spacing: -0.10rem;
+            }
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            .logo:hover,
+            .card:hover,
+            .card:hover img,
+            .live-demo-btn:hover,
+            .footer .social a:hover {
+                transform: none;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+            header,
+            .header,
+            .navbar,
+            .live-demo-btn,
+            .footer .social a {
+                background: rgba(20,20,24,0.97);
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <header class="header">
-        <a href="/index.html" class="logo">Abhishek
-        <span>Nadar</span></a>
-    
-        <i class='bx bx-menu' id="menu-icon"></i>
+        <a href="/index.html" class="logo" aria-label="Abhishek Nadar portfolio home">
+            Abhishek <span>Nadar</span>
+        </a>
 
-        <nav class="navbar">
+        <i class='bx bx-menu' id="menu-icon" aria-label="Open navigation menu"></i>
+
+        <nav class="navbar" aria-label="Portfolio navigation">
             <a href="/index.html">Home</a>
             <a href="/websites.html" class="active">Live Websites</a>
             <a href="/Posters.html">Posters</a>
@@ -303,71 +754,170 @@ header{
         </nav>
     </header>
 
-    <section class="website" id="website">
-    <div class="website-content">
-        <h2>Live Website Projects</h2>
-        <div class="card-container">
-            <div class="card">
-                <img src="/Website 1.png" alt="Website Project 1">
-                <h3>London American City College, UAE</h3>
-                <a href="https://lacc.ae/" target="_blank"><button class="live-demo-btn">Live Demo</button></a>
+    <main>
+        <section class="website" id="website">
+            <div class="website-content">
+
+                <span class="section-eyebrow">
+                    <i class='bx bx-code-alt' aria-hidden="true"></i>
+                    Web Design Portfolio
+                </span>
+
+                <h1>Live Website <span>Projects</span></h1>
+
+                <p class="website-intro">
+                    Selected live website and landing page projects showcasing my experience in responsive web design,
+                    WordPress, conversion-focused layouts and digital marketing implementation for businesses in the UAE and beyond.
+                </p>
+
+                <div class="card-container">
+
+                    <article class="card">
+                        <div class="card-media">
+                            <img src="/Website 1.png"
+                                 alt="London American City College UAE live website project"
+                                 loading="lazy"
+                                 decoding="async">
+                        </div>
+                        <div class="card-body">
+                            <span class="project-type">Education Website</span>
+                            <h2>London American City College, UAE</h2>
+                            <a class="live-demo-btn"
+                               href="https://lacc.ae/"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="View London American City College live website">
+                                <span>View Live Website</span>
+                                <i class='bx bx-link-external' aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-media">
+                            <img src="/Website 2.png"
+                                 alt="LACC landing page website design project"
+                                 loading="lazy"
+                                 decoding="async">
+                        </div>
+                        <div class="card-body">
+                            <span class="project-type">Landing Page</span>
+                            <h2>LACC Landing Page</h2>
+                            <a class="live-demo-btn"
+                               href="https://londonamericancitycollege.com/"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="View LACC landing page live website">
+                                <span>View Live Website</span>
+                                <i class='bx bx-link-external' aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-media">
+                            <img src="/Website 3.png"
+                                 alt="Explore Global General Trading UAE live website project"
+                                 loading="lazy"
+                                 decoding="async">
+                        </div>
+                        <div class="card-body">
+                            <span class="project-type">Business Website</span>
+                            <h2>Explore Global General Trading, UAE</h2>
+                            <a class="live-demo-btn"
+                               href="https://exploreglobalgentrad.com/"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="View Explore Global General Trading live website">
+                                <span>View Live Website</span>
+                                <i class='bx bx-link-external' aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-media">
+                            <img src="/Website 4.png"
+                                 alt="Facial Aesthetics for Dentists live website project"
+                                 loading="lazy"
+                                 decoding="async">
+                        </div>
+                        <div class="card-body">
+                            <span class="project-type">Professional Website</span>
+                            <h2>Facial Aesthetics</h2>
+                            <a class="live-demo-btn"
+                               href="https://facialaestheticsfordentists.com/"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="View Facial Aesthetics for Dentists live website">
+                                <span>View Live Website</span>
+                                <i class='bx bx-link-external' aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-media">
+                            <img src="/Website 5.png"
+                                 alt="The Perio Institute live website project"
+                                 loading="lazy"
+                                 decoding="async">
+                        </div>
+                        <div class="card-body">
+                            <span class="project-type">Professional Website</span>
+                            <h2>The Perio Institute</h2>
+                            <a class="live-demo-btn"
+                               href="https://www.theperioinstitute.com/"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="View The Perio Institute live website">
+                                <span>View Live Website</span>
+                                <i class='bx bx-link-external' aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
             </div>
-            <div class="card">
-                <img src="/Website 2.png" alt="Website Project 2">
-                <h3>LACC Landing Page</h3>
-                <a href="https://londonamericancitycollege.com/" target="_blank"><button class="live-demo-btn">Live Demo</button></a>
-            </div>
-            <div class="card">
-                <img src="/Website 3.png" alt="Website Project 3">
-                <h3>Explore Global General Trading, UAE</h3>
-                <a href="https://exploreglobalgentrad.com/" target="_blank"><button class="live-demo-btn">Live Demo</button></a>
-            </div>
-            <div class="card">
-                <img src="/Website 4.png" alt="Website Project 4">
-                <h3>Facial Aesthetics</h3>
-                <a href="https://facialaestheticsfordentists.com/" target="_blank"><button class="live-demo-btn">Live Demo</button></a>
-            </div>
-            <div class="card">
-                <img src="/Website 5.png" alt="Website Project 5">
-                <h3>The Perio Institute</h3>
-                <a href="https://www.theperioinstitute.com/" target="_blank"><button class="live-demo-btn">Live Demo</button></a>
-            </div>
-            
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="social">
-            <a href="https://www.linkedin.com/in/abhishek-nadar/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-            <a href="https://www.instagram.com/___heavenly_demon___/profilecard/?igsh=MXZ0cnJtN3ZpcGFsNA=="><i class='bx bxl-instagram-alt' ></i></a>
-            <a href="https://wa.me/00971525031087" target="_blank"><i class='bx bxl-whatsapp' ></i></a>
+            <a href="https://www.linkedin.com/in/abhishek-nadar/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Abhishek Nadar on LinkedIn">
+                <i class='bx bxl-linkedin' aria-hidden="true"></i>
+            </a>
+
+            <a href="https://www.instagram.com/___heavenly_demon___/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Abhishek Nadar on Instagram">
+                <i class='bx bxl-instagram-alt' aria-hidden="true"></i>
+            </a>
+
+            <a href="https://wa.me/00971525031087"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Contact Abhishek Nadar on WhatsApp">
+                <i class='bx bxl-whatsapp' aria-hidden="true"></i>
+            </a>
         </div>
-        
+
         <ul class="list">
-            <li>
-                <a href="/index.html">Home</a>
-            </li>
-
-            <li>
-                <a href="/websites.html" class="active">Live Websites</a>
-            </li>
-
-            <li>
-                <a href="/Posters.html">Posters</a>
-            </li>
-
-            <li>
-                <a href="/PDF&PPT.html">PDF & PPT</a>
-            </li>
-
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/websites.html" class="active">Live Websites</a></li>
+            <li><a href="/Posters.html">Posters</a></li>
+            <li><a href="/PDF&PPT.html">PDF & PPT</a></li>
         </ul>
 
         <p class="copyright">
-            © Abhishek Nadar | All Rights Preserved
+            © Abhishek Nadar | All Rights Reserved
         </p>
-
     </footer>
-    
+
     <script src="/js/script.js"></script>
 </body>
 </html>
